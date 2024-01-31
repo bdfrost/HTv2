@@ -1,0 +1,41 @@
+services:
+  netdata:
+    image: REPLACE
+    container_name: netdata
+    security_opt:
+      - apparmor:unconfined
+    restart: unless-stopped
+    profiles: ["core", "all"]
+    hostname: pepper.frost.haus
+    networks:
+      - t2_proxy
+      - default
+    cap_add:
+      - SYS_PTRACE
+    environment:
+      DO_NOT_TRACK: 1
+      DOCKERUID: ${DOCKER_USERNAME}
+      DOCKERPWD: ${DOCKER_PWD}
+      TZ: $TZ
+      PUID: $PUID
+      PGID: $PGID
+      volumes:
+      - $DOCKERDIR/appdata/netdata/etc/:/etc/netdata/
+      - $DOCKERDIR/appdata/netdata/lib/:/var/lib/netdata/
+      - $DOCKERDIR/appdata/netdata/cache/:/var/cache/netdata/
+      - /etc/passwd:/host/etc/passwd:ro
+      - /etc/group:/host/etc/group:ro
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /etc/os-release:/host/etc/os-release:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro  
+    labels:
+      - "traefik.enable=true"
+      ## HTTP Routers
+      - "traefik.http.routers.netdata-rtr.entrypoints=https"
+      - "traefik.http.routers.netdata-rtr.rule=Host(`netdata.$DOMAINNAME`)"
+      ## Middlewares
+      - "traefik.http.routers.netdata-rtr.middlewares=chain-no-auth@file"
+      ## HTTP Services
+      - "traefik.http.routers.netdata-rtr.service=netdata-svc"
+      - "traefik.http.services.netdata-svc.loadbalancer.server.port=19999"

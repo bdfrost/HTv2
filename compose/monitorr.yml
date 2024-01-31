@@ -1,0 +1,27 @@
+services:
+  monitorr:
+    image: monitorr/monitorr:latest
+    container_name: monitorr
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    profiles: ["core", "all"]
+    networks:
+      - t2_proxy
+      - default
+    environment:
+      TZ: $TZ
+      PUID: $PUID
+      PGID: $PGID
+    volumes:
+      - $DOCKERDIR/appdata/monitorr:/app
+    labels:
+      - "traefik.enable=true"
+      ## HTTP Routers
+      - "traefik.http.routers.monitorr-rtr.entrypoints=https"
+      - "traefik.http.routers.monitorr-rtr.rule=Host(`monitorr.$DOMAINNAME`)"
+      ## Middlewares
+      - "traefik.http.routers.monitorr-rtr.middlewares=chain-no-auth@file"
+      ## HTTP Services
+      - "traefik.http.routers.monitorr-rtr.service=monitorr-svc"
+      - "traefik.http.services.monitorr-svc.loadbalancer.server.port=80"

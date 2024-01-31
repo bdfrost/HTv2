@@ -1,0 +1,39 @@
+services:
+  timemachine:
+    image: mbentley/timemachine:latest
+    container_name: timemachine
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    profiles: ["core", "all"]
+    environment:
+      CUSTOM_SMB_CONF: false
+      CUSTOM_AFP_CONF: false
+      CUSTOM_USER: false
+      DEBUG_LEVEL: 1
+      LOG_LEVEL: info  
+      EXTERNAL_CONF: ""
+      HIDE_SHARES: no
+      MIMIC_MODEL: TimeCapsule8,119
+      TM_USERNAME: timemachine
+      TM_GROUPNAME: timemachine
+      TM_UID: ${PUID}
+      TM_GID: ${PGID}
+      PASSWORD: ${TM_PASSWORD}
+      SET_PERMISSIONS: false
+      SHARE_NAME: TimeMachine
+      VOLUME_SIZE_LIMIT: "2T"
+      WORKGROUP: WORKGROUP
+    volumes:
+      - /mnt/media/timecapsule:/opt/timemachine
+      # - timemachine-var-lib-samba:/var/lib/samba
+      # - timemachine-var-cache-samba:/var/cache/samba
+      # - timemachine-run-samba:/run/samba
+    hostname: timemachine
+    networks: 
+      macvlan_network:
+        ipv4_address: 192.168.100.12
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536

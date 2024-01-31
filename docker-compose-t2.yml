@@ -1,10 +1,4 @@
 version: "3.9"
-
-########################### NETWORKS
-# There is no need to create any networks outside this docker-compose file.
-# You may customize the network subnets (192.168.90.0/24 and 91.0/24) below as you please.
-# Docker Compose version 3.5 or higher required to define networks this way.
-
 networks:
   t2_proxy:
     name: t2_proxy

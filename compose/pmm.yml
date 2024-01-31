@@ -1,0 +1,19 @@
+services:
+  pmm:
+    image: eisnate12/plex-meta-manager:latest
+    container_name: pmm
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    profiles: ["core", "all"]
+    networks:
+      - t2_proxy
+      - default
+    # ports:
+    #  - "3001:3001" 
+    environment:
+      TZ: $TZ
+      PUID: $PUID
+      PGID: $PGID
+    volumes:
+      - $DOCKERDIR/appdata/pmm:/config

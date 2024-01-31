@@ -1,0 +1,18 @@
+services:
+  plex:
+    image: plexinc/pms-docker:plexpass
+    container_name: plex
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    profiles: ["core", "all"]
+    network_mode: host
+    environment:
+      TZ: $TZ
+      PUID: $PUID
+      PGID: $PGID
+      DOCKER_MODS: linuxserver/mods:plex-absolute-hama
+      VERSION: public
+      PLEX_CLAIM: ${PLEX_CLAIM_CODE}
+    volumes:
+      - $DOCKERDIR/appdata/NAME:/app/data

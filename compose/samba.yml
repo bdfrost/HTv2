@@ -1,0 +1,23 @@
+services:
+  samba:
+    image: sixeyed/samba
+    container_name: samba
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    profiles: ["core", "all"]
+    networks:
+      - t2_proxy
+      - default
+    environment:
+      TZ: $TZ
+      PUID: $PUID
+      PGID: $PGID
+    volumes:
+      - /mnt/media/fileshare:/fileshare
+    ports:
+      - "139:139"
+      - "445:445"
+      - "137:137/udp"
+      - "138:138/udp"
+  command: samba.sh -s "fileshare;/fileshare;yes;no;yes;all"
