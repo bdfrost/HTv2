@@ -1,11 +1,11 @@
 services:
   sabnzbd:
-    image: REPLACE
+    image: lscr.io/linuxserver/sabnzbd:latest
     container_name: sabnzbd
     security_opt:
       - no-new-privileges:true
     restart: unless-stopped
-    profiles: ["core", "all"]
+    profiles: ["apps", "all"]
     networks:
       - t2_proxy
       - default

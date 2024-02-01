@@ -10,8 +10,6 @@ services:
     networks:
       - t2_proxy
       - default
-    # ports:
-    #  - "3001:3001" 
     volumes:
       - $DOCKERDIR/appdata/uptime-kuma:/app/data
     labels:

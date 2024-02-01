@@ -1,6 +1,6 @@
 services:
   netdata:
-    image: REPLACE
+    image: netdata/netdata:latest
     container_name: netdata
     security_opt:
       - apparmor:unconfined
