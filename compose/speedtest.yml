@@ -1,4 +1,4 @@
-speedtest:
+services:
   speedtest:
     image: henrywhitaker3/speedtest-tracker:latest
     container_name: speedtest
