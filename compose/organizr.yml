@@ -18,12 +18,8 @@ services:
       - $DOCKERDIR/appdata/organizr:/config
     labels:
       - "traefik.enable=true"
-      ## HTTP Routers
       - "traefik.http.routers.organizr-rtr.entrypoints=https"
-      # - "traefik.http.routers.organizr-rtr.rule=Host(`$DOMAINNAME`)"
-      - "traefik.http.routers.organizr-rtr.rule=Host(`$DOMAINNAME`,`www.$DOMAINNAME`)" # Both domain.com and www.domain.com
-      ## Middlewares
+      - "traefik.http.routers.organizr-rtr.rule=Host(`$DOMAINNAME`,`www.$DOMAINNAME`,`organizr.$DOMAINNAME`)"
       - "traefik.http.routers.organizr-rtr.middlewares=chain-no-auth@file"
-      ## HTTP Services
       - "traefik.http.routers.organizr-rtr.service=organizr-svc"
       - "traefik.http.services.organizr-svc.loadbalancer.server.port=80"
