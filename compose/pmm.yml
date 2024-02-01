@@ -7,10 +7,7 @@ services:
     restart: unless-stopped
     profiles: ["apps", "all"]
     networks:
-      - t2_proxy
       - default
-    # ports:
-    #  - "3001:3001" 
     environment:
       TZ: $TZ
       PUID: $PUID

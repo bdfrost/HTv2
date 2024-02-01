@@ -10,8 +10,6 @@ services:
     networks:
       - t2_proxy
       - socket_proxy
-    # ports:
-    #  - "3000:3000" 
     volumes:
       - $DOCKERDIR/appdata/homepage:/app/config
     environment:

@@ -8,9 +8,6 @@ services:
     profiles: ["apps", "all"]
     networks:
       - t2_proxy
-      - default
-    # ports:
-    #  - "3001:3001" 
     environment:
       TZ: $TZ
       PUID: $PUID
@@ -21,12 +18,8 @@ services:
       - /mnt/media:/data
     labels:
       - "traefik.enable=true"
-      ## HTTP Routers
       - "traefik.http.routers.sonarr-rtr.entrypoints=https"
       - "traefik.http.routers.sonarr-rtr.rule=Host(`sonarr.$DOMAINNAME`)"
-      ## Middlewares
       - "traefik.http.routers.sonarr-rtr.middlewares=chain-no-auth@file"
-      ## HTTP Services
       - "traefik.http.routers.sonarr-rtr.service=sonarr-svc"
       - "traefik.http.services.sonarr-svc.loadbalancer.server.port=8989"
-

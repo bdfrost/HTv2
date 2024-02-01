@@ -8,7 +8,6 @@ services:
     profiles: ["apps", "all"]
     networks:
       - t2_proxy
-      - default
     environment:
       TZ: $TZ
       PUID: $PUID

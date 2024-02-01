@@ -7,7 +7,6 @@ services:
     restart: unless-stopped
     profiles: ["core", "all"]
     networks:
-      - t2_proxy
       - default
     environment:
       TZ: $TZ

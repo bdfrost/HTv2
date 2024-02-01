@@ -9,7 +9,7 @@ services:
     hostname: pepper.frost.haus
     networks:
       - t2_proxy
-      - default
+      - socket_proxy
     cap_add:
       - SYS_PTRACE
     environment:

@@ -8,7 +8,8 @@ services:
     profiles: ["apps", "all"]
     networks:
       - t2_proxy
-      - default
+      # - default
+      # - socket_proxy
     # ports:
     #  - "3001:3001" 
     environment:

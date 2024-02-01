@@ -9,7 +9,6 @@ services:
     profiles: ["core", "all"]
     networks:
       - t2_proxy
-      - default
     volumes:
       - $DOCKERDIR/appdata/uptime-kuma:/app/data
     labels:
