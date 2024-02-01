@@ -14,7 +14,7 @@ services:
       PGID: $PGID
       DOCKER_MODS: linuxserver/mods:universal-cron
     volumes:
-      - $DOCKERDIR/appdata/plexpy:/config
+      - $DOCKERDIR/appdata/tautulli:/config
       - "$DOCKERDIR/appdata/plex/Library/Application\\ Support/Plex\\ Media\\ Server/Logs:/logs:ro"
       - $DOCKERDIR/appdata/healthcheck:/config/crontabs
     labels:
