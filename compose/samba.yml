@@ -19,4 +19,4 @@ services:
       - "445:445"
       - "137:137/udp"
       - "138:138/udp"
-  command: samba.sh -s "fileshare;/fileshare;yes;no;yes;all"
+    command: samba.sh -s "fileshare;/fileshare;yes;no;yes;all"
