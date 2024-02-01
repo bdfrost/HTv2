@@ -31,7 +31,7 @@ include:
   - compose/portainer.yml
   - compose/prowlarr.yml
   - compose/radarr.yml
-  - compose/readarr
+  - compose/readarr.yml
   - compose/sabnzbd.yml
   - compose/samba.yml
   - compose/socket-proxy.yml
