@@ -19,12 +19,9 @@ services:
       - $DOCKERDIR/appdata/healthcheck:/config/crontabs
     labels:
       - "traefik.enable=true"
-      ## HTTP Routers
       - "traefik.http.routers.duplicati-rtr.entrypoints=https"
       - "traefik.http.routers.duplicati-rtr.rule=Host(`duplicati.$DOMAINNAME`)"
-      ## Middlewares
       - "traefik.http.routers.duplicati-rtr.middlewares=chain-no-auth@file"
-      ## HTTP Services
       - "traefik.http.routers.duplicati-rtr.service=duplicati-svc"
-      - "traefik.http.services.NAMduplicatiE-svc.loadbalancer.server.port=8200"
+      - "traefik.http.services.duplicati-svc.loadbalancer.server.port=8200"
   
