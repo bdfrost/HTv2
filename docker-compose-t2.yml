@@ -33,7 +33,7 @@ include:
   - compose/radarr.yml
   - compose/readarr.yml
   - compose/sabnzbd.yml
-  - compose/samba.yml
+  # - compose/samba.yml
   - compose/socket-proxy.yml
   - compose/sonarr.yml
   - compose/speedtest.yml
