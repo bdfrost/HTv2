@@ -14,14 +14,12 @@ services:
       PGID: $PGID
       DOCKER_MODS: linuxserver/mods:universal-cron
     volumes:
-      - $DOCKERDIR/appdata/overseerr:/app/data
+      - $DOCKERDIR/appdata/overseerr:/config
+      - $DOCKERDIR/appdata/healthcheck:/config/crontabs
     labels:
       - "traefik.enable=true"
-      ## HTTP Routers
       - "traefik.http.routers.overseerr-rtr.entrypoints=https"
       - "traefik.http.routers.overseerr-rtr.rule=Host(`overseerr.$DOMAINNAME`)"
-      ## Middlewares
       - "traefik.http.routers.overseerr-rtr.middlewares=chain-no-auth@file"
-      ## HTTP Services
       - "traefik.http.routers.overseerr-rtr.service=overseerr-svc"
       - "traefik.http.services.overseerr-svc.loadbalancer.server.port=5055"
