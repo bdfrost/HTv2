@@ -18,11 +18,8 @@ services:
       - $DOCKERDIR/appdata/healthcheck:/config/crontabs
     labels:
       - "traefik.enable=true"
-      ## HTTP Routers
       - "traefik.http.routers.prowlarr-rtr.entrypoints=https"
       - "traefik.http.routers.prowlarr-rtr.rule=Host(`prowlarr.$DOMAINNAME`)"
-      ## Middlewares
       - "traefik.http.routers.prowlarr-rtr.middlewares=chain-no-auth@file"
-      ## HTTP Services
       - "traefik.http.routers.prowlarr-rtr.service=prowlarr-svc"
       - "traefik.http.services.prowlarr-svc.loadbalancer.server.port=9696"
