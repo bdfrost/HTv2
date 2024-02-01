@@ -40,5 +40,5 @@ include:
   - compose/tautulli.yml
   - compose/timemachine.yml
   - compose/traefik.yml
-  - compose/uptime-kuma.yml
+  # - compose/uptime-kuma.yml
   # - SERVICE-PLACEHOLDER-DO-NOT-DELETE
