@@ -9,6 +9,7 @@ services:
     networks:
       - t2_proxy
       - socket_proxy
+      - default
     environment:
       TZ: $TZ
       PUID: $PUID
