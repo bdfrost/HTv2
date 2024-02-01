@@ -1,6 +1,6 @@
 services:
   pmm:
-    image: eisnate12/plex-meta-manager:latest
+    image: meisnate12/plex-meta-manager:latest
     container_name: pmm
     security_opt:
       - no-new-privileges:true
