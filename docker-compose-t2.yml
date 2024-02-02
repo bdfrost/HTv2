@@ -32,7 +32,7 @@ include:
   - compose/prowlarr.yml
   - compose/radarr.yml
   - compose/readarr.yml
-  - compose/recyclar.yml
+  - compose/recyclarr.yml
   - compose/sabnzbd.yml
   # - compose/samba.yml
   - compose/socket-proxy.yml
