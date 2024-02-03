@@ -15,6 +15,7 @@ services:
     volumes:
       - $DOCKERDIR/appdata/duplicati:/config
       - /mnt:/source
+      - $DOCKERDIR/appdata/:/source/appdata
       - $DOCKERDIR/appdata/healthcheck:/config/crontabs
     labels:
       - "traefik.enable=true"
