@@ -19,7 +19,6 @@ include:
   # - compose/custom.yml
   - compose/bazarr.yml
   - compose/diun.yml
-  - compose/docker-gc.yml
   - compose/dozzle.yml
   - compose/duplicati.yml
   # - compose/homepage.yml
