@@ -11,8 +11,6 @@ services:
     networks:
       - t2_proxy
       - default
-
-
     volumes:
       - $DOCKERDIR/appdata/authelia:/config
     environment:
