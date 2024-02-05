@@ -1,3 +1,6 @@
 # Add all your custom docker compose snippets here. Auto-Traefik will not modify this.
 # Uncomment services and the compose below it, following yaml syntax.
 # services:
+secrets:
+  mysql_root_password:
+    file: secrets/mysql_root_password.txt
