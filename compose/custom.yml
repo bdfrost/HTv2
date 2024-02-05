@@ -1,5 +1,6 @@
 # Add all your custom docker compose snippets here. Auto-Traefik will not modify this.
 # Uncomment services and the compose below it, following yaml syntax.
+include:
   - compose/bazarr.yml
   - compose/diun.yml
   - compose/dozzle.yml
