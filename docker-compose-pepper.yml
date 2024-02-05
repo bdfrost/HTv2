@@ -41,6 +41,7 @@ include:
   - compose/$HOSTNAME/timemachine.yml
   - compose/$HOSTNAME/traefik.yml
   # - SERVICE-PLACEHOLDER-DO-NOT-DELETE
-  - compose/$HOSTNAME/authelia.yml
   - compose/$HOSTNAME/socket-proxy.yml
+  - compose/$HOSTNAME/mariadb.yml
+  - compose/$HOSTNAME/authelia.yml
   # SERVICE-PLACEHOLDER-DO-NOT-DELETE
