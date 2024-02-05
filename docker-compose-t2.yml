@@ -16,8 +16,8 @@ networks:
         - subnet: 192.168.91.0/24
 ########################### SERVICES
 include:
-  - compose/custom.yml
-  - compose/portainer.yml
-  - compose/socket-proxy.yml
-  - compose/traefik.yml
+  - compose/pepper/custom.yml
+  - compose/pepper/portainer.yml
+  - compose/pepper/socket-proxy.yml
+  - compose/pepper/traefik.yml
   # - SERVICE-PLACEHOLDER-DO-NOT-DELETE
