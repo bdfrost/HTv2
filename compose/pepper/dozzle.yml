@@ -18,6 +18,6 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.dozzle-rtr.entrypoints=websecure"
       - "traefik.http.routers.dozzle-rtr.rule=Host(`dozzle.$DOMAINNAME`)"
-      - "traefik.http.routers.dozzle-rtr.middlewares=chain-no-auth@file"
+      - "traefik.http.routers.dozzle-rtr.middlewares=chain-authelia@file"
       - "traefik.http.routers.dozzle-rtr.service=dozzle-svc"
       - "traefik.http.services.dozzle-svc.loadbalancer.server.port=8080"
