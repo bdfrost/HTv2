@@ -17,7 +17,7 @@ services:
       - $DOCKERDIR/appdata/bazarr:/app/data
       - "/mnt/media/movies:/movies"
       - "/mnt/media/tv:/tv"
-      - $DOCKERDIR/bazarr/config:/config
+      - $DOCKERDIR/appdata/bazarr/config:/config
     labels:
       - "traefik.enable=true"
       ## HTTP Routers
