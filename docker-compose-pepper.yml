@@ -22,4 +22,5 @@ include:
   - compose/$HOSTNAME/socket-proxy.yml
   - compose/$HOSTNAME/mariadb.yml
   - compose/$HOSTNAME/authelia.yml
+  - compose/$HOSTNAME/traefik.yml
   # SERVICE-PLACEHOLDER-DO-NOT-DELETE

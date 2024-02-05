@@ -23,3 +23,7 @@ include:
 secrets:
   mysql_root_password:
     file: $DOCKERDIR/secrets/mysql_root_password
+  cf_dns_api_token:
+    file: $DOCKERDIR/secrets/cf_dns_api_token
+  basic_auth_credentials:
+    file: $DOCKERDIR/secrets/basic_auth_credentials
