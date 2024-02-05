@@ -16,10 +16,6 @@ networks:
         - subnet: 192.168.91.0/24
 ########################### SERVICES
 include:
-  - compose/$HOSTNAME/custom.yml
-  - compose/$HOSTNAME/portainer.yml
-  - compose/$HOSTNAME/socket-proxy.yml
-  - compose/$HOSTNAME/traefik.yml
   - compose/$HOSTNAME/bazarr.yml
   - compose/$HOSTNAME/diun.yml
   - compose/$HOSTNAME/dozzle.yml
@@ -41,6 +37,10 @@ include:
   - compose/$HOSTNAME/timemachine.yml
   - compose/$HOSTNAME/traefik.yml
   # - SERVICE-PLACEHOLDER-DO-NOT-DELETE
+  - compose/$HOSTNAME/socket-proxy.yml
+  - compose/$HOSTNAME/custom.yml
+  - compose/$HOSTNAME/portainer.yml
+  - compose/$HOSTNAME/traefik.yml
   - compose/$HOSTNAME/socket-proxy.yml
   - compose/$HOSTNAME/mariadb.yml
   - compose/$HOSTNAME/authelia.yml
