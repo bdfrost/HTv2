@@ -1,22 +1,22 @@
 # Add all your custom docker compose snippets here. Auto-Traefik will not modify this.
 # Uncomment services and the compose below it, following yaml syntax.
 include:
-  - compose/bazarr.yml
-  - compose/diun.yml
-  - compose/dozzle.yml
-  - compose/duplicati.yml
-  - compose/monitorr.yml
-  - compose/netdata.yml
-  - compose/organizr.yml
-  - compose/overseerr.yml
-  - compose/plex.yml
-  - compose/pmm.yml
-  - compose/prowlarr.yml
-  - compose/radarr.yml
-  - compose/readarr.yml
-  - compose/sabnzbd.yml
-  - compose/sonarr.yml
-  - compose/speedtest.yml
-  - compose/tautulli.yml
-  - compose/timemachine.yml
+  - compose/pepper/bazarr.yml
+  - compose/pepper/diun.yml
+  - compose/pepper/dozzle.yml
+  - compose/pepper/duplicati.yml
+  - compose/pepper/monitorr.yml
+  - compose/pepper/netdata.yml
+  - compose/pepper/organizr.yml
+  - compose/pepper/overseerr.yml
+  - compose/pepper/plex.yml
+  - compose/pepper/pmm.yml
+  - compose/pepper/prowlarr.yml
+  - compose/pepper/radarr.yml
+  - compose/pepper/readarr.yml
+  - compose/pepper/sabnzbd.yml
+  - compose/pepper/sonarr.yml
+  - compose/pepper/speedtest.yml
+  - compose/pepper/tautulli.yml
+  - compose/pepper/timemachine.yml
 # services:
