@@ -22,4 +22,4 @@ include:
   - compose/$HOSTNAME/timemachine.yml
 secrets:
   mysql_root_password:
-    file: ../../secrets/mysql_root_password
+    file: $DOCKERDIR/secrets/mysql_root_password
