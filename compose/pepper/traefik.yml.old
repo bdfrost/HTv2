@@ -83,10 +83,7 @@ services:
       - DOMAINNAME # Passing the domain name to traefik container to be able to use the variable in rules. 
     labels:
       - "traefik.enable=true"
-      # HTTP Routers
       - "traefik.http.routers.traefik-rtr.entrypoints=https"
       - "traefik.http.routers.traefik-rtr.rule=Host(`traefik.$DOMAINNAME`)"
-      ## Services - API
       - "traefik.http.routers.traefik-rtr.service=api@internal"
-      ## Middlewares
       - "traefik.http.routers.traefik-rtr.middlewares=chain-basic-auth@file" # For Basic HTTP Authentication

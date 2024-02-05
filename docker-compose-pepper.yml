@@ -19,7 +19,6 @@ include:
   # - SERVICE-PLACEHOLDER-DO-NOT-DELETE
   - compose/$HOSTNAME/custom.yml
   - compose/$HOSTNAME/portainer.yml
-  - compose/$HOSTNAME/traefik.yml
   - compose/$HOSTNAME/socket-proxy.yml
   - compose/$HOSTNAME/mariadb.yml
   - compose/$HOSTNAME/authelia.yml
