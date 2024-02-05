@@ -9,12 +9,12 @@ services:
     networks:
       - t2_proxy
       - socket_proxy
-    # command: -H unix:///var/run/docker.sock # Use Docker Socket Proxy instead for improved security
-    command: -H tcp://socket-proxy:2375
+    command: -H unix:///var/run/docker.sock # Use Docker Socket Proxy instead for improved security
+    # command: -H tcp://socket-proxy:2375
     # ports: # For access from local network using enable this ports block.
     #   - "9000:9000" # Port 9000 must be free on the Docker host.
     volumes:
-      # - /var/run/docker.sock:/var/run/docker.sock:ro # Use Docker Socket Proxy instead for improved security
+      - /var/run/docker.sock:/var/run/docker.sock:ro # Use Docker Socket Proxy instead for improved security
       - $DOCKERDIR/appdata/portainer:/data 
     environment:
       - TZ=$TZ
