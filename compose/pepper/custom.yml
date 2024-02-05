@@ -1,6 +1,25 @@
 # Add all your custom docker compose snippets here. Auto-Traefik will not modify this.
 # Uncomment services and the compose below it, following yaml syntax.
 # services:
+include:
+  - compose/$HOSTNAME/bazarr.yml
+  - compose/$HOSTNAME/diun.yml
+  - compose/$HOSTNAME/dozzle.yml
+  - compose/$HOSTNAME/duplicati.yml
+  - compose/$HOSTNAME/monitorr.yml
+  - compose/$HOSTNAME/netdata.yml
+  - compose/$HOSTNAME/organizr.yml
+  - compose/$HOSTNAME/overseerr.yml
+  - compose/$HOSTNAME/plex.yml
+  - compose/$HOSTNAME/pmm.yml
+  - compose/$HOSTNAME/prowlarr.yml
+  - compose/$HOSTNAME/radarr.yml
+  - compose/$HOSTNAME/readarr.yml
+  - compose/$HOSTNAME/sabnzbd.yml
+  - compose/$HOSTNAME/sonarr.yml
+  - compose/$HOSTNAME/speedtest.yml
+  - compose/$HOSTNAME/tautulli.yml
+  - compose/$HOSTNAME/timemachine.yml
 secrets:
   mysql_root_password:
     file: ../../secrets/mysql_root_password
