@@ -16,8 +16,31 @@ networks:
         - subnet: 192.168.91.0/24
 ########################### SERVICES
 include:
-  - compose/pepper/custom.yml
-  - compose/pepper/portainer.yml
-  - compose/pepper/socket-proxy.yml
-  - compose/pepper/traefik.yml
+  - compose/$HOSTNAME/custom.yml
+  - compose/$HOSTNAME/portainer.yml
+  - compose/$HOSTNAME/socket-proxy.yml
+  - compose/$HOSTNAME/traefik.yml
+  - compose/$HOSTNAME/bazarr.yml
+  - compose/$HOSTNAME/diun.yml
+  - compose/$HOSTNAME/dozzle.yml
+  - compose/$HOSTNAME/duplicati.yml
+  - compose/$HOSTNAME/monitorr.yml
+  - compose/$HOSTNAME/netdata.yml
+  - compose/$HOSTNAME/organizr.yml
+  - compose/$HOSTNAME/overseerr.yml
+  - compose/$HOSTNAME/plex.yml
+  - compose/$HOSTNAME/pmm.yml
+  - compose/$HOSTNAME/portainer.yml
+  - compose/$HOSTNAME/prowlarr.yml
+  - compose/$HOSTNAME/radarr.yml
+  - compose/$HOSTNAME/readarr.yml
+  - compose/$HOSTNAME/sabnzbd.yml
+  - compose/$HOSTNAME/sonarr.yml
+  - compose/$HOSTNAME/speedtest.yml
+  - compose/$HOSTNAME/tautulli.yml
+  - compose/$HOSTNAME/timemachine.yml
+  - compose/$HOSTNAME/traefik.yml
   # - SERVICE-PLACEHOLDER-DO-NOT-DELETE
+  - compose/$HOSTNAME/authelia.yml
+  - compose/$HOSTNAME/socket-proxy.yml
+  # SERVICE-PLACEHOLDER-DO-NOT-DELETE
