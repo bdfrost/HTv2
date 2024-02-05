@@ -31,7 +31,7 @@ services:
       # - /var/run/docker.sock:/var/run/docker.sock:ro  
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.netdata-rtr.entrypoints=https"
+      - "traefik.http.routers.netdata-rtr.entrypoints=websecure"
       - "traefik.http.routers.netdata-rtr.rule=Host(`netdata.$DOMAINNAME`)"
       - "traefik.http.routers.netdata-rtr.middlewares=chain-no-auth@file"
       - "traefik.http.routers.netdata-rtr.service=netdata-svc"

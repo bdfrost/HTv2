@@ -18,7 +18,7 @@ services:
       - $DOCKERDIR/appdata/healthcheck:/config/crontabs
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.prowlarr-rtr.entrypoints=https"
+      - "traefik.http.routers.prowlarr-rtr.entrypoints=websecure"
       - "traefik.http.routers.prowlarr-rtr.rule=Host(`prowlarr.$DOMAINNAME`)"
       - "traefik.http.routers.prowlarr-rtr.middlewares=chain-no-auth@file"
       - "traefik.http.routers.prowlarr-rtr.service=prowlarr-svc"
