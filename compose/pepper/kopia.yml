@@ -17,6 +17,9 @@ services:
       - --address=0.0.0.0:51515
       - --server-username=`cat $USERNAME`
       - --server-password=`cat $SECRET_PASSWORD`
+    privileged: true
+    cap_add:
+      - SYS_ADMIN
     secrets:
       - kopia_username
       - kopia_password
@@ -39,4 +42,3 @@ services:
       - "traefik.http.routers.kopia-rtr.middlewares=chain-no-auth@file"
       - "traefik.http.routers.kopia-rtr.service=kopia-svc"
       - "traefik.http.services.kopia-svc.loadbalancer.server.port=51515"
-  
