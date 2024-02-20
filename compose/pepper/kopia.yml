@@ -21,8 +21,8 @@ services:
       - kopia_username
       - kopia_password
     environment:
-      USERNAME: /run/secrets/kopia_username
-      SECRET_PASSWORD: /run/secrets/kopia_password
+      USERNAME: "/run/secrets/kopia_username"
+      SECRET_PASSWORD: "/run/secrets/kopia_password"
       TZ: $TZ
       PUID: $PUID
       PGID: $PGID
