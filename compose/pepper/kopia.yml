@@ -1,0 +1,41 @@
+services:
+  kopia:
+    image: kopia/kopia:latest
+    container_name: kopia
+    hostname: Hostname
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    profiles: ["core", "all"]
+    networks:
+      - t2_proxy
+    command:
+      - server
+      - start
+      - --disable-csrf-token-checks
+      - --insecure
+      - --address=0.0.0.0:51515
+      - --server-username=USERNAME
+      - --server-password=SECRET_PASSWORD
+    secrets:
+      - kopia_username
+      - kopia_password
+    environment:
+      USERNAME: /run/secrets/kopia_username
+      SECRET_PASSWORD: /run/secrets/kopia_password
+      TZ: $TZ
+      PUID: $PUID
+      PGID: $PGID
+    volumes:
+      - $DOCKERDIR/appdata/kopia/config:/app/config
+      - $DOCKERDIR/appdata/kopia/cache:/app/cache
+      - $DOCKERDIR/appdata/kopia/logs:/app/logs
+      - /mnt:/data:ro
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.kopia-rtr.entrypoints=websecure"
+      - "traefik.http.routers.kopia-rtr.rule=Host(`kopia.$DOMAINNAME`)"
+      - "traefik.http.routers.kopia-rtr.middlewares=chain-no-auth@file"
+      - "traefik.http.routers.kopia-rtr.service=kopia-svc"
+      - "traefik.http.services.kopia-svc.loadbalancer.server.port=51515"
+  

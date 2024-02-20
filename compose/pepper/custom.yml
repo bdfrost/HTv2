@@ -6,6 +6,7 @@ include:
   - compose/$HOSTNAME/diun.yml
   - compose/$HOSTNAME/dozzle.yml
   - compose/$HOSTNAME/duplicati.yml
+  - compose/$HOSTNAME/kopia.yml
   - compose/$HOSTNAME/monitorr.yml
   - compose/$HOSTNAME/netdata.yml
   - compose/$HOSTNAME/organizr.yml
@@ -27,3 +28,7 @@ secrets:
     file: $DOCKERDIR/secrets/cf_dns_api_token
   basic_auth_credentials:
     file: $DOCKERDIR/secrets/basic_auth_credentials
+  kopia_username:
+    file: $DOCKERDIR/secrets/kopia_username
+  kopia_password:
+    file: $DOCKERDIR/secrets/kopia_password
