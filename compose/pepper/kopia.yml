@@ -15,14 +15,14 @@ services:
       - --disable-csrf-token-checks
       - --insecure
       - --address=0.0.0.0:51515
-      - --server-username="$USERNAME"
-      - --server-password="$SECRET_PASSWORD"
+      - --server-username=`cat $USERNAME`
+      - --server-password=`cat $SECRET_PASSWORD`
     secrets:
       - kopia_username
       - kopia_password
     environment:
-      USERNAME: "/run/secrets/kopia_username"
-      SECRET_PASSWORD: "/run/secrets/kopia_password"
+      USERNAME: /run/secrets/kopia_username
+      SECRET_PASSWORD: /run/secrets/kopia_password
       TZ: $TZ
       PUID: $PUID
       PGID: $PGID
