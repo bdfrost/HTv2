@@ -31,6 +31,7 @@ services:
       - $DOCKERDIR/appdata/kopia/cache:/app/cache
       - $DOCKERDIR/appdata/kopia/logs:/app/logs
       - /mnt:/data:ro
+      - /mnt/media/kopia:/repository
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.kopia-rtr.entrypoints=websecure"
