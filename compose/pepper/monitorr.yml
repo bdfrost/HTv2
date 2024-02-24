@@ -20,7 +20,8 @@ services:
       - "traefik.http.routers.monitorr-rtr.entrypoints=websecure"
       - "traefik.http.routers.monitorr-rtr.rule=Host(`monitorr.$DOMAINNAME`)"
       ## Middlewares
-      - "traefik.http.routers.monitorr-rtr.middlewares=chain-no-auth@file"
+      # - "traefik.http.routers.monitorr-rtr.middlewares=chain-no-auth@file"
+      - "traefik.http.routers.monitorr-rtr.middlewares=chain-authelia@file"
       ## HTTP Services
       - "traefik.http.routers.monitorr-rtr.service=monitorr-svc"
       - "traefik.http.services.monitorr-svc.loadbalancer.server.port=80"

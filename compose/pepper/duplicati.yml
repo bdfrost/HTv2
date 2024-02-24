@@ -21,7 +21,8 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.duplicati-rtr.entrypoints=websecure"
       - "traefik.http.routers.duplicati-rtr.rule=Host(`duplicati.$DOMAINNAME`)"
-      - "traefik.http.routers.duplicati-rtr.middlewares=chain-no-auth@file"
+      - "traefik.http.routers.duplicati-rtr.middlewares=chain-authelia@file"
+      # - "traefik.http.routers.duplicati-rtr.middlewares=chain-no-auth@file"
       - "traefik.http.routers.duplicati-rtr.service=duplicati-svc"
       - "traefik.http.services.duplicati-svc.loadbalancer.server.port=8200"
   

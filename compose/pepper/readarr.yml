@@ -21,7 +21,8 @@ services:
       - "traefik.http.routers.readarr-rtr.entrypoints=websecure"
       - "traefik.http.routers.readarr-rtr.rule=Host(`readarr.$DOMAINNAME`)"
       ## Middlewares
-      - "traefik.http.routers.readarr-rtr.middlewares=chain-no-auth@file"
+      # - "traefik.http.routers.readarr-rtr.middlewares=chain-no-auth@file"
+      - "traefik.http.routers.readarr-rtr.middlewares=chain-authelia@file"
       ## HTTP Services
       - "traefik.http.routers.readarr-rtr.service=readarr-svc"
       - "traefik.http.services.readarr-svc.loadbalancer.server.port=8787"
