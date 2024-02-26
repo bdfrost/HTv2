@@ -1,6 +1,7 @@
 services:
   pseudotv:
-    image: tcjdesign/pseudotv-plex
+    # image: tcjdesign/pseudotv-plex
+    image: defendore/pseudotv
     container_name: pseudotv
     security_opt:
       - no-new-privileges:true
