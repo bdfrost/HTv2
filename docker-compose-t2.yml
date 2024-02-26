@@ -21,7 +21,6 @@ include:
   - compose/diun.yml
   - compose/dozzle.yml
   - compose/duplicati.yml
-  - compose/pseudotv.yml
   # - compose/homepage.yml
   - compose/monitorr.yml
   - compose/netdata.yml
@@ -31,6 +30,7 @@ include:
   - compose/pmm.yml
   - compose/portainer.yml
   - compose/prowlarr.yml
+  - compose/pseudotv.yml
   - compose/radarr.yml
   - compose/readarr.yml
   - compose/sabnzbd.yml
