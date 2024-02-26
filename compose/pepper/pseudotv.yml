@@ -18,7 +18,7 @@ services:
       - $DOCKERDIR/appdata/pseudotv:/home/node/app/.pseudotv
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.pseudotv-rtr.entrypoints=web,websecure"
+      - "traefik.http.routers.pseudotv-rtr.entrypoints=web"
       - "traefik.http.routers.pseudotv-rtr.rule=Host(`pseudotv.$DOMAINNAME`)"
       - "traefik.http.routers.pseudotv-rtr.middlewares=chain-no-auth@file"
       - "traefik.http.routers.pseudotv-rtr.service=pseudotv-svc"
