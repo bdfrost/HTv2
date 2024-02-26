@@ -14,6 +14,7 @@ include:
   - compose/$HOSTNAME/plex.yml
   - compose/$HOSTNAME/pmm.yml
   - compose/$HOSTNAME/prowlarr.yml
+  - compose/$HOSTNAME/pseudotv.yml
   - compose/$HOSTNAME/radarr.yml
   - compose/$HOSTNAME/readarr.yml
   - compose/$HOSTNAME/sabnzbd.yml
