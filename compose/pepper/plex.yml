@@ -22,3 +22,4 @@ services:
       - /mnt/media/tvdvr:/data/tvdvr
       - /mnt/media/gphotos/photos:/data/photos
       - /mnt/media/movies:/data/movies
+      - /mnt/media/filler:/data/filler
