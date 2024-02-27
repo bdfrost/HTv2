@@ -13,7 +13,6 @@ services:
       TZ: $TZ
       PUID: $PUID
       PGID: $PGID
-      HOST_OS: "Linux"
     volumes:
       - $DOCKERDIR/appdata/pseudotv:/home/node/app/.pseudotv
     labels:
