@@ -4,6 +4,7 @@
 include:
   - compose/$HOSTNAME/bazarr.yml
   - compose/$HOSTNAME/diun.yml
+  - compose/$HOSTNAME/dizquetv.yml
   - compose/$HOSTNAME/dozzle.yml
   - compose/$HOSTNAME/duplicati.yml
   - compose/$HOSTNAME/kopia.yml
@@ -14,7 +15,6 @@ include:
   - compose/$HOSTNAME/plex.yml
   - compose/$HOSTNAME/pmm.yml
   - compose/$HOSTNAME/prowlarr.yml
-  - compose/$HOSTNAME/pseudotv.yml
   - compose/$HOSTNAME/radarr.yml
   - compose/$HOSTNAME/readarr.yml
   - compose/$HOSTNAME/sabnzbd.yml

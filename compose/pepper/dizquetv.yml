@@ -1,0 +1,23 @@
+services:
+  dizquetv:
+    image: vexorian/dizquetv
+    container_name: dizquetv
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    profiles: ["apps", "all"]
+    networks:
+      - t2_proxy
+    environment:
+      TZ: $TZ
+      PUID: $PUID
+      PGID: $PGID
+    volumes:
+      - $DOCKERDIR/appdata/dizquetv:/home/node/app/.dizquetv
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.dizquetv-rtr.entrypoints=websecure"
+      - "traefik.http.routers.dizquetv-rtr.rule=Host(`dizquetv.$DOMAINNAME`)"
+      - "traefik.http.routers.dizquetv-rtr.middlewares=chain-no-auth@file"
+      - "traefik.http.routers.dizquetv-rtr.service=dizquetv-svc"
+      - "traefik.http.services.dizquetv-svc.loadbalancer.server.port=8000"
