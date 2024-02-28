@@ -1,27 +1,27 @@
-# Add all your custom docker ~/docker/compose snippets here. Auto-Traefik will not modify this.
-# Uncomment services and the ~/docker/compose below it, following yaml syntax.
+# Add all your custom docker /home/bfrost/docker/compose snippets here. Auto-Traefik will not modify this.
+# Uncomment services and the /home/bfrost/docker/compose below it, following yaml syntax.
 # services:
 include:
-  - ~/docker/compose/$HOSTNAME/bazarr.yml
-  - ~/docker/compose/$HOSTNAME/diun.yml
-  - ~/docker/compose/$HOSTNAME/dizquetv.yml
-  - ~/docker/compose/$HOSTNAME/dozzle.yml
-  - ~/docker/compose/$HOSTNAME/duplicati.yml
-  - ~/docker/compose/$HOSTNAME/kopia.yml
-  - ~/docker/compose/$HOSTNAME/monitorr.yml
-  - ~/docker/compose/$HOSTNAME/netdata.yml
-  - ~/docker/compose/$HOSTNAME/organizr.yml
-  - ~/docker/compose/$HOSTNAME/overseerr.yml
-  - ~/docker/compose/$HOSTNAME/plex.yml
-  - ~/docker/compose/$HOSTNAME/pmm.yml
-  - ~/docker/compose/$HOSTNAME/prowlarr.yml
-  - ~/docker/compose/$HOSTNAME/radarr.yml
-  - ~/docker/compose/$HOSTNAME/readarr.yml
-  - ~/docker/compose/$HOSTNAME/sabnzbd.yml
-  - ~/docker/compose/$HOSTNAME/sonarr.yml
-  - ~/docker/compose/$HOSTNAME/speedtest.yml
-  - ~/docker/compose/$HOSTNAME/tautulli.yml
-  - ~/docker/compose/$HOSTNAME/timemachine.yml
+  - /home/bfrost/docker/compose/$HOSTNAME/bazarr.yml
+  - /home/bfrost/docker/compose/$HOSTNAME/diun.yml
+  - /home/bfrost/docker/compose/$HOSTNAME/dizquetv.yml
+  - /home/bfrost/docker/compose/$HOSTNAME/dozzle.yml
+  - /home/bfrost/docker/compose/$HOSTNAME/duplicati.yml
+  - /home/bfrost/docker/compose/$HOSTNAME/kopia.yml
+  - /home/bfrost/docker/compose/$HOSTNAME/monitorr.yml
+  - /home/bfrost/docker/compose/$HOSTNAME/netdata.yml
+  - /home/bfrost/docker/compose/$HOSTNAME/organizr.yml
+  - /home/bfrost/docker/compose/$HOSTNAME/overseerr.yml
+  - /home/bfrost/docker/compose/$HOSTNAME/plex.yml
+  - /home/bfrost/docker/compose/$HOSTNAME/pmm.yml
+  - /home/bfrost/docker/compose/$HOSTNAME/prowlarr.yml
+  - /home/bfrost/docker/compose/$HOSTNAME/radarr.yml
+  - /home/bfrost/docker/compose/$HOSTNAME/readarr.yml
+  - /home/bfrost/docker/compose/$HOSTNAME/sabnzbd.yml
+  - /home/bfrost/docker/compose/$HOSTNAME/sonarr.yml
+  - /home/bfrost/docker/compose/$HOSTNAME/speedtest.yml
+  - /home/bfrost/docker/compose/$HOSTNAME/tautulli.yml
+  - /home/bfrost/docker/compose/$HOSTNAME/timemachine.yml
 secrets:
   mysql_root_password:
     file: $DOCKERDIR/secrets/mysql_root_password
