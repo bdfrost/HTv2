@@ -18,10 +18,10 @@ networks:
 ########################### SERVICES
 include:
   # - SERVICE-PLACEHOLDER-DO-NOT-DELETE
-  - compose/$HOSTNAME/custom.yml
-  - compose/$HOSTNAME/portainer.yml
-  - compose/$HOSTNAME/socket-proxy.yml
-  - compose/$HOSTNAME/mariadb.yml
-  - compose/$HOSTNAME/authelia.yml
-  - compose/$HOSTNAME/traefik.yml
+  - ~/docker/compose/$HOSTNAME/custom.yml
+  - ~/docker/compose/$HOSTNAME/portainer.yml
+  - ~/docker/compose/$HOSTNAME/socket-proxy.yml
+  - ~/docker/compose/$HOSTNAME/mariadb.yml
+  - ~/docker/compose/$HOSTNAME/authelia.yml
+  - ~/docker/compose/$HOSTNAME/traefik.yml
   # SERVICE-PLACEHOLDER-DO-NOT-DELETE
