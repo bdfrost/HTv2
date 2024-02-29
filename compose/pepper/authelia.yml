@@ -15,7 +15,6 @@ services:
       - $DOCKERDIR/appdata/authelia:/config
     environment:
       - TZ=$TZ
-
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.authelia-rtr.entrypoints=websecure"
