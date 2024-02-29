@@ -15,7 +15,7 @@ services:
       - --disable-csrf-token-checks
       - --insecure
       - --address=0.0.0.0:51515
-      - --server-username=$$(cat /run/secrets/kopia_username)
+      - --server-username=${KOPIA_USERNAME}
       - --server-password=$$(cat /run/secrets/kopia_secret_password)
     privileged: true
     cap_add:
@@ -25,8 +25,8 @@ services:
       - kopia_password
       - kopia_repo_password
     environment:
-      KOPIA_USERNAME: $$(cat /run/secrets/kopia_username )
-      KOPIA_SECRET_PASSWORD: /run/secrets/kopia_password
+      KOPIA_USERNAME: /run/secrets/kopia_username
+      KOPIA_SECRET_PASSWORD: ${/run/secrets/kopia_password}
       SECRET_REPO_PASSWORD: /run/secrets/kopia_repo_password
       TZ: $TZ
       PUID: $PUID
