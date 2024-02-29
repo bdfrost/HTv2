@@ -33,3 +33,5 @@ secrets:
     file: $DOCKERDIR/secrets/kopia_username
   kopia_password:
     file: $DOCKERDIR/secrets/kopia_password
+  kopia_repo_password:
+    file: $DOCKERDIR/secrets/kopia_repo_password
