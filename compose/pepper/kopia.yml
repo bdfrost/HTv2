@@ -15,8 +15,8 @@ services:
       - --disable-csrf-token-checks
       - --insecure
       - --address=0.0.0.0:51515
-      - --FILE__server-username=$USERNAME
-      - --FILE__server-password=$SECRET_PASSWORD
+      - --FILE__server-username=/run/secrets/kopia_username
+      - --FILE__server-password=/run/secrets/kopia_password
     privileged: true
     cap_add:
       - SYS_ADMIN
