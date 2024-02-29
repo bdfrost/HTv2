@@ -10,7 +10,7 @@ services:
     networks:
       - t2_proxy
     command:
-      - export KOPIA_USERNAME=${{cat /run/secrets/kopia_username}}
+      - export KOPIA_USERNAME=$${cat /run/secrets/kopia_username}
       - server
       - start
       - --disable-csrf-token-checks
