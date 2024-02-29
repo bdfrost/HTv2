@@ -15,17 +15,19 @@ services:
       - --disable-csrf-token-checks
       - --insecure
       - --address=0.0.0.0:51515
-      - --server-username=$USERNAME
-      - --server-password=$SECRET_PASSWORD_FILE
+      - --FILE__server-username=$USERNAME
+      - --FILE__server-password=$SECRET_PASSWORD
     privileged: true
     cap_add:
       - SYS_ADMIN
     secrets:
       - kopia_username
       - kopia_password
+      - kopia_repo_password
     environment:
-      USERNAME_FILE: /run/secrets/kopia_username
-      SECRET_PASSWORD_FILE: /run/secrets/kopia_password
+      USERNAME: /run/secrets/kopia_username
+      SECRET_PASSWORD: /run/secrets/kopia_password
+      SECRET_REPO_PASSWORD: /run/secrets/kopia_repo_password
       TZ: $TZ
       PUID: $PUID
       PGID: $PGID
@@ -40,6 +42,5 @@ services:
       - "traefik.http.routers.kopia-rtr.entrypoints=websecure"
       - "traefik.http.routers.kopia-rtr.rule=Host(`kopia.$DOMAINNAME`)"
       - "traefik.http.routers.kopia-rtr.middlewares=chain-no-auth@file"
-      
       - "traefik.http.routers.kopia-rtr.service=kopia-svc"
       - "traefik.http.services.kopia-svc.loadbalancer.server.port=51515"
