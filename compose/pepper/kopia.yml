@@ -10,12 +10,13 @@ services:
     networks:
       - t2_proxy
     command:
+      - export KOPIA_USERNAME=${{cat /run/secrets/kopia_username}}
       - server
       - start
       - --disable-csrf-token-checks
       - --insecure
       - --address=0.0.0.0:51515
-      - --server-username=$${KOPIA_USERNAME}
+      - --server-username=$KOPIA_USERNAME
       - --server-password=$KOPIA_SECRET_PASSWORD
     privileged: true
     cap_add:
@@ -25,7 +26,7 @@ services:
       - kopia_password
       - kopia_repo_password
     environment:
-      KOPIA_USERNAME: $${/run/secrets/kopia_username}
+      # KOPIA_USERNAME: $${/run/secrets/kopia_username}
       KOPIA_SECRET_PASSWORD: $${/run/secrets/kopia_password}
       SECRET_REPO_PASSWORD: $${/run/secrets/kopia_repo_password}
       TZ: $TZ
