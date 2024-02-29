@@ -23,7 +23,7 @@ services:
       - kopia_password
       - kopia_repo_password
     environment:
-      KOPIA_SERVER_USERNAME: `cat /run/secrets/kopia_username`
+      KOPIA_SERVER_USERNAME: /run/secrets/kopia_username
       KOPIA_SERVER_PASSWORD: /run/secrets/kopia_password
       SECRET_REPO_PASSWORD: /run/secrets/kopia_repo_password
       TZ: $TZ
