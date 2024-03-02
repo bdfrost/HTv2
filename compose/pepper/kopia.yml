@@ -26,7 +26,7 @@ services:
     #   - kopia_repo_password
     environment:
       KOPIA_SERVER_USERNAME: $DOCKER_USERNAME
-      KOPIA_SECRET_PASSWORD: $TM_PASSWORD
+      KOPIA_PASSWORD: $TM_PASSWORD
       SECRET_REPO_PASSWORD: $TM_PASSWORD
       TZ: $TZ
       PUID: $PUID
