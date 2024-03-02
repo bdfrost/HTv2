@@ -15,15 +15,9 @@ services:
       - --disable-csrf-token-checks
       - --insecure
       - --address=0.0.0.0:51515
-      # - --server-username=$KOPIA_SERVER_USERNAME
-      # - --server-password=$KOPIA_PASSWORD
     privileged: true
     cap_add:
       - SYS_ADMIN
-    # secrets:
-    #   - kopia_username
-    #   - kopia_password
-    #   - kopia_repo_password
     environment:
       KOPIA_SERVER_USERNAME: $DOCKER_USERNAME
       KOPIA_SERVER_PASSWORD: $TM_PASSWORD
@@ -32,9 +26,10 @@ services:
       PUID: $PUID
       PGID: $PGID
     volumes:
-      - $DOCKERDIR/appdata/kopia/config:/app/config
-      - $DOCKERDIR/appdata/kopia/cache:/app/cache
-      - $DOCKERDIR/appdata/kopia/logs:/app/logs
+      - $DOCKERDIR/appdata/kopia:/app
+      # - $DOCKERDIR/appdata/kopia/config:/app/config
+      # - $DOCKERDIR/appdata/kopia/cache:/app/cache
+      # - $DOCKERDIR/appdata/kopia/logs:/app/logs
       - /mnt:/data:ro
       - /mnt/media/kopia:/repository
     labels:
