@@ -15,20 +15,19 @@ services:
       - --disable-csrf-token-checks
       - --insecure
       - --address=0.0.0.0:51515
-      - --server-username=$FILE__KOPIA_SERVER_USERNAME
-      - --server-password=$KOPIA_SECRET_PASSWORD
+      # - --server-username=$FILE__KOPIA_SERVER_USERNAME
+      # - --server-password=$KOPIA_SECRET_PASSWORD
     privileged: true
     cap_add:
       - SYS_ADMIN
-    secrets:
-      - kopia_username
-      - kopia_password
-      - kopia_repo_password
+    # secrets:
+    #   - kopia_username
+    #   - kopia_password
+    #   - kopia_repo_password
     environment:
-      FILE__KOPIA_SERVER_USERNAME: /run/secrets/kopia_username
-      # KOPIA_USERNAME: /run/secrets/kopia_username
-      KOPIA_SECRET_PASSWORD: /run/secrets/kopia_password
-      SECRET_REPO_PASSWORD: /run/secrets/kopia_repo_password
+      KOPIA_SERVER_USERNAME: $DOCKER_USERNAME
+      KOPIA_SECRET_PASSWORD: $TM_PASSWORD
+      SECRET_REPO_PASSWORD: $TM_PASSWORD
       TZ: $TZ
       PUID: $PUID
       PGID: $PGID
