@@ -9,7 +9,6 @@ services:
     networks:
       - t2_proxy
     environment:
-      # DOCKER_MODS: linuxserver/mods:universal-cron
       TZ: $TZ
       PUID: $PUID
       PGID: $PGID
@@ -19,12 +18,8 @@ services:
       - $DOCKERDIR/appdata/healthcheck:/config/crontabs
     labels:
       - "traefik.enable=true"
-      ## HTTP Routers
       - "traefik.http.routers.radarr-rtr.entrypoints=websecure"
       - "traefik.http.routers.radarr-rtr.rule=Host(`radarr.$DOMAINNAME`)"
-      ## Middlewares
-      # - "traefik.http.routers.radarr-rtr.middlewares=chain-no-auth@file"
       - "traefik.http.routers.radarr-rtr.middlewares=chain-authelia@file"
-      ## HTTP Services
       - "traefik.http.routers.radarr-rtr.service=radarr-svc"
       - "traefik.http.services.radarr-svc.loadbalancer.server.port=7878"
