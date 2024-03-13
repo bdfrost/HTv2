@@ -10,8 +10,8 @@ services:
       - t2_proxy
     environment:
       TZ: $TZ
-      PUID: 1001
-      PGID: 127
+      PUID: $PUID
+      PGID: $PGID
     volumes:
       - $DOCKERDIR/appdata/sonarr:/config
       - $DOCKERDIR/appdata/healthcheck:/config/crontabs
