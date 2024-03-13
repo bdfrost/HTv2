@@ -12,6 +12,7 @@ services:
       TZ: $TZ
       PUID: $PUID
       PGID: $PGID
+      PATH: $PATH:/app/sonarr/bin/
     volumes:
       - $DOCKERDIR/appdata/sonarr:/config
       - $DOCKERDIR/appdata/healthcheck:/config/crontabs
