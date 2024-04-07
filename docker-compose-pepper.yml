@@ -17,11 +17,11 @@ networks:
     driver: macvlan
     driver_opts:
       parent: ens18
-    # ipam:
-    #   driver: default
-    #   config:
-    #     - subnet: 192.168.100.0/24
-    #     - gateway: 192.168.100.1
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.100.0/24
+          gateway: 192.168.100.1
 ########################### SERVICES
 include:
   # - SERVICE-PLACEHOLDER-DO-NOT-DELETE
