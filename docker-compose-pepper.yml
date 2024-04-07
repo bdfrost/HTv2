@@ -21,8 +21,8 @@ networks:
       driver: default
       config:
         - subnet: 192.168.100.0/24
-          ip_range: 192.168.100.8/29
-          gateway: 192.168.100.1/32
+          ip_range: 192.168.100.8/28
+          gateway: 192.168.100.1
 ########################### SERVICES
 include:
   # - SERVICE-PLACEHOLDER-DO-NOT-DELETE
