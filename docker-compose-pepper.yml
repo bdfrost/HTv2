@@ -15,13 +15,13 @@ networks:
         - subnet: 192.168.91.0/24
   macvlan_network:
     driver: macvlan
-    options:
+    driver_opts:
       parent: ens18
     ipam:
       driver: default
       config:
         - subnet: 192.168.100.0/24
-          ip_range: 192.168.100.8/28
+          ip_range: 192.168.100.0/28
           gateway: 192.168.100.1
 ########################### SERVICES
 include:
