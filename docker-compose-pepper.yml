@@ -15,7 +15,7 @@ networks:
         - subnet: 192.168.91.0/24
   macvlan_network:
     driver: macvlan
-    driver_opts:
+    options:
       parent: ens18
     ipam:
       driver: default
