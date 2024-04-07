@@ -30,7 +30,7 @@ services:
       # - timemachine-var-cache-samba:/var/cache/samba
       # - timemachine-run-samba:/run/samba
     hostname: timemachine
-    network_mode: host
+    # network_mode: host
     networks: 
       macvlan_network:
         ipv4_address: 192.168.100.12
