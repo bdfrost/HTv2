@@ -10,8 +10,8 @@ services:
       - default
     ports:
       - 6601:6601/tcp # Syslog TCP
-      - 6514:6514/tcp # Syslog TLS
-      - 5515:5515/udp # Syslog UDP
+      # - 6514:6514/tcp # Syslog TLS
+      - 5514:5514/udp # Syslog UDP
     environment:
       TZ: $TZ
       PUID: $PUID
