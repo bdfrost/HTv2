@@ -1,6 +1,6 @@
 services:
   syslogng:
-    image: linuxserver/syslogng:4.5.0
+    image: linuxserver/syslog-ng:4.5.0
     container_name: syslogng
     security_opt:
       - no-new-privileges:true
