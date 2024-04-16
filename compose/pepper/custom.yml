@@ -3,6 +3,7 @@
 # services:
 include:
   - /home/bfrost/docker/compose/$HOSTNAME/bazarr.yml
+  - /home/bfrost/docker/compose/$HOSTNAME/syslogng.yml
   - /home/bfrost/docker/compose/$HOSTNAME/diun.yml
   - /home/bfrost/docker/compose/$HOSTNAME/dizquetv.yml
   - /home/bfrost/docker/compose/$HOSTNAME/dozzle.yml
