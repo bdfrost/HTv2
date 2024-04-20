@@ -3,9 +3,8 @@
 # services:
 include:
   - /home/bfrost/docker/compose/$HOSTNAME/bazarr.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/syslogng.yml
   - /home/bfrost/docker/compose/$HOSTNAME/diun.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/dizquetv.yml
+  # - /home/bfrost/docker/compose/$HOSTNAME/dizquetv.yml
   - /home/bfrost/docker/compose/$HOSTNAME/dozzle.yml
   - /home/bfrost/docker/compose/$HOSTNAME/duplicati.yml
   - /home/bfrost/docker/compose/$HOSTNAME/kopia.yml
@@ -21,6 +20,7 @@ include:
   - /home/bfrost/docker/compose/$HOSTNAME/sabnzbd.yml
   - /home/bfrost/docker/compose/$HOSTNAME/sonarr.yml
   - /home/bfrost/docker/compose/$HOSTNAME/speedtest.yml
+  # - /home/bfrost/docker/compose/$HOSTNAME/syslogng.yml
   - /home/bfrost/docker/compose/$HOSTNAME/tautulli.yml
   - /home/bfrost/docker/compose/$HOSTNAME/timemachine.yml
 secrets:
