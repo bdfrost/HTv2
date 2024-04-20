@@ -1,6 +1,6 @@
 services:
   speedtest:
-    image: henrywhitaker3/speedtest-tracker:latest
+    image:  lscr.io/linuxserver/speedtest-tracker:latest
     container_name: speedtest
     security_opt:
       - no-new-privileges:true
@@ -13,6 +13,7 @@ services:
       PUID: $PUID
       PGID: $PGID
       OOKLA_EULA_GDPR: true
+      DB_CONNECTION: sqlite
     volumes:
       - $DOCKERDIR/appdata/speedtest:/config
     labels:
