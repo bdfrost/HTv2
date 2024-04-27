@@ -22,7 +22,7 @@ include:
   - /home/bfrost/docker/compose/$HOSTNAME/speedtest.yml
   # - /home/bfrost/docker/compose/$HOSTNAME/syslogng.yml
   - /home/bfrost/docker/compose/$HOSTNAME/tautulli.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/timemachine.yml
+  # - /home/bfrost/docker/compose/$HOSTNAME/timemachine.yml
 secrets:
   mysql_root_password:
     file: $DOCKERDIR/secrets/mysql_root_password
