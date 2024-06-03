@@ -24,7 +24,8 @@ services:
       - "traefik.http.routers.maintainerr-rtr.entrypoints=websecure"
       - "traefik.http.routers.maintainerr-rtr.rule=Host(`maintainerr.$DOMAINNAME`)"
       ## Middlewares
-      - "traefik.http.routers.maintainerr-rtr.middlewares=chain-no-auth@file"
+      - "traefik.http.routers.maintainerr-rtr.entrypoints=websecure"
+      # - "traefik.http.routers.maintainerr-rtr.middlewares=chain-no-auth@file"
       ## HTTP Services
       - "traefik.http.routers.maintainerr-rtr.service=maintainerr-svc"
       - "traefik.http.services.maintainerr-svc.loadbalancer.server.port=6246"
