@@ -1,7 +1,7 @@
 services:
   kometa:
     image: kometateam/kometa:latest
-    container_name: pmm
+    container_name: kometa
     security_opt:
       - no-new-privileges:true
     restart: unless-stopped
@@ -13,4 +13,4 @@ services:
       PUID: $PUID
       PGID: $PGID
     volumes:
-      - $DOCKERDIR/appdata/pmm:/config
+      - $DOCKERDIR/appdata/kometa:/config
