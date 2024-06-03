@@ -10,11 +10,11 @@ services:
       - t2_proxy
       # - default
       # - socket_proxy
-    USER: $PUID:$PGID
     environment:
       TZ: $TZ
       PUID: $PUID
       PGID: $PGID      
+      USER: $PUID:$PGID
       # DEBUG=true # uncomment to enable debug logs
     volumes:
       - $DOCKERDIR/appdata/maintainerr:/opt/data
