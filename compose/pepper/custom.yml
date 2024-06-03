@@ -13,7 +13,7 @@ include:
   - /home/bfrost/docker/compose/$HOSTNAME/organizr.yml
   - /home/bfrost/docker/compose/$HOSTNAME/overseerr.yml
   - /home/bfrost/docker/compose/$HOSTNAME/plex.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/pmm.yml
+  - /home/bfrost/docker/compose/$HOSTNAME/kometa.yml
   - /home/bfrost/docker/compose/$HOSTNAME/prowlarr.yml
   - /home/bfrost/docker/compose/$HOSTNAME/radarr.yml
   - /home/bfrost/docker/compose/$HOSTNAME/readarr.yml

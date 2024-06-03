@@ -1,6 +1,6 @@
 services:
-  pmm:
-    image: meisnate12/plex-meta-manager:latest
+  kometa:
+    image: kometateam/kometa:latest
     container_name: pmm
     security_opt:
       - no-new-privileges:true
