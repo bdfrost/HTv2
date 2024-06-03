@@ -1,0 +1,30 @@
+services:
+  maintainerr:
+    image: ghcr.io/jorenn92/maintainerr:latest 
+    container_name: maintainerr
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    profiles: ["apps", "all"]
+    networks:
+      - t2_proxy
+      # - default
+      # - socket_proxy
+    USER: $PUID:$PGID
+    environment:
+      TZ: $TZ
+      PUID: $PUID
+      PGID: $PGID      
+      # DEBUG=true # uncomment to enable debug logs
+    volumes:
+      - $DOCKERDIR/appdata/maintainerr:/opt/data
+    labels:
+      - "traefik.enable=true"
+      ## HTTP Routers
+      - "traefik.http.routers.maintainerr-rtr.entrypoints=websecure"
+      - "traefik.http.routers.maintainerr-rtr.rule=Host(`maintainerr.$DOMAINNAME`)"
+      ## Middlewares
+      - "traefik.http.routers.maintainerr-rtr.middlewares=chain-no-auth@file"
+      ## HTTP Services
+      - "traefik.http.routers.maintainerr-rtr.service=maintainerr-svc"
+      - "traefik.http.services.maintainerr-svc.loadbalancer.server.port=6246"

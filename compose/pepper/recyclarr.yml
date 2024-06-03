@@ -1,16 +1,32 @@
 services:
   recyclarr:
-    image: ghcr.io/recyclarr/recyclarr:latest
+    image: ghcr.io/recyclarr/recyclarr
     container_name: recyclarr
     security_opt:
       - no-new-privileges:true
     restart: unless-stopped
     profiles: ["apps", "all"]
     networks:
+      # - t2_proxy
       - default
-    user: 1000:1000
-    volumes:
-      - $DOCKERDIR/appdata/recyclarr:/config
+      # - socket_proxy
+    # ports:
+    #  - "3001:3001" 
     environment:
       TZ: $TZ
+      PUID: $PUID
+      PGID: $PGID
       RECYCLARR_CREATE_CONFIG: "true"
+    user: $PUID:$PGID
+    volumes:
+      - $DOCKERDIR/appdata/recyclarr:/config
+    # labels:
+    #   - "traefik.enable=true"
+    #   ## HTTP Routers
+    #   - "traefik.http.routers.recyclarr-rtr.entrypoints=websecure"
+    #   - "traefik.http.routers.recyclarr-rtr.rule=Host(`recyclarr.$DOMAINNAME`)"
+    #   ## Middlewares
+    #   - "traefik.http.routers.recyclarr-rtr.middlewares=chain-no-auth@file"
+    #   ## HTTP Services
+    #   - "traefik.http.routers.recyclarr-rtr.service=recyclarr-svc"
+    #   - "traefik.http.services.recyclarr-svc.loadbalancer.server.port=BACKENDPORT"

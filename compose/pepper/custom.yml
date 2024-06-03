@@ -2,27 +2,26 @@
 # Uncomment services and the /home/bfrost/docker/compose below it, following yaml syntax.
 # services:
 include:
-  - /home/bfrost/docker/compose/$HOSTNAME/bazarr.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/diun.yml
-  # - /home/bfrost/docker/compose/$HOSTNAME/dizquetv.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/dozzle.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/duplicati.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/kopia.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/monitorr.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/netdata.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/organizr.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/overseerr.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/plex.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/kometa.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/prowlarr.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/radarr.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/readarr.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/sabnzbd.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/sonarr.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/speedtest.yml
-  # - /home/bfrost/docker/compose/$HOSTNAME/syslogng.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/tautulli.yml
-  # - /home/bfrost/docker/compose/$HOSTNAME/timemachine.yml
+  - compose/$HOSTNAME/bazarr.yml
+  - compose/$HOSTNAME/diun.yml
+  - compose/$HOSTNAME/dozzle.yml
+  - compose/$HOSTNAME/duplicati.yml
+  - compose/$HOSTNAME/kometa.yml
+  - compose/$HOSTNAME/kopia.yml
+  - compose/$HOSTNAME/maintainerr.yml
+  - compose/$HOSTNAME/monitorr.yml
+  - compose/$HOSTNAME/netdata.yml
+  - compose/$HOSTNAME/organizr.yml
+  - compose/$HOSTNAME/overseerr.yml
+  - compose/$HOSTNAME/plex.yml
+  - compose/$HOSTNAME/prowlarr.yml
+  - compose/$HOSTNAME/radarr.yml
+  - compose/$HOSTNAME/readarr.yml
+  - compose/$HOSTNAME/recyclarr.yml
+  - compose/$HOSTNAME/sabnzbd.yml
+  - compose/$HOSTNAME/sonarr.yml
+  - compose/$HOSTNAME/speedtest.yml
+  - compose/$HOSTNAME/tautulli.yml
 secrets:
   mysql_root_password:
     file: $DOCKERDIR/secrets/mysql_root_password
