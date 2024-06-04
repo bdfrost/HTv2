@@ -1,7 +1,7 @@
 services:
   plex:
     # image: plexinc/pms-docker:latest
-    image: linuxserver/plex:latest
+    image: linuxserver/plex:1.32.7.7621-871adbd44-ls192
     container_name: plex
     security_opt:
       - no-new-privileges:true
