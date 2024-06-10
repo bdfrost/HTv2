@@ -2,26 +2,26 @@
 # Uncomment services and the /home/bfrost/docker/compose below it, following yaml syntax.
 # services:
 include:
-  - compose/$HOSTNAME/bazarr.yml
-  - compose/$HOSTNAME/diun.yml
-  - compose/$HOSTNAME/dozzle.yml
-  - compose/$HOSTNAME/duplicati.yml
-  - compose/$HOSTNAME/kometa.yml
-  - compose/$HOSTNAME/kopia.yml
-  - compose/$HOSTNAME/maintainerr.yml
-  - compose/$HOSTNAME/monitorr.yml
-  - compose/$HOSTNAME/netdata.yml
-  - compose/$HOSTNAME/organizr.yml
-  - compose/$HOSTNAME/overseerr.yml
-  - compose/$HOSTNAME/plex.yml
-  - compose/$HOSTNAME/prowlarr.yml
-  - compose/$HOSTNAME/radarr.yml
-  - compose/$HOSTNAME/readarr.yml
-  - compose/$HOSTNAME/recyclarr.yml
-  - compose/$HOSTNAME/sabnzbd.yml
-  - compose/$HOSTNAME/sonarr.yml
-  - compose/$HOSTNAME/speedtest.yml
-  - compose/$HOSTNAME/tautulli.yml
+  - $DOCKERDIR/compose/$HOSTNAME/bazarr.yml
+  - $DOCKERDIR/compose/$HOSTNAME/diun.yml
+  - $DOCKERDIR/compose/$HOSTNAME/dozzle.yml
+  - $DOCKERDIR/compose/$HOSTNAME/duplicati.yml
+  - $DOCKERDIR/compose/$HOSTNAME/kometa.yml
+  - $DOCKERDIR/compose/$HOSTNAME/kopia.yml
+  - $DOCKERDIR/compose/$HOSTNAME/maintainerr.yml
+  - $DOCKERDIR/compose/$HOSTNAME/monitorr.yml
+  - $DOCKERDIR/compose/$HOSTNAME/netdata.yml
+  - $DOCKERDIR/compose/$HOSTNAME/organizr.yml
+  - $DOCKERDIR/compose/$HOSTNAME/overseerr.yml
+  - $DOCKERDIR/compose/$HOSTNAME/plex.yml
+  - $DOCKERDIR/compose/$HOSTNAME/prowlarr.yml
+  - $DOCKERDIR/compose/$HOSTNAME/radarr.yml
+  - $DOCKERDIR/compose/$HOSTNAME/readarr.yml
+  - $DOCKERDIR/compose/$HOSTNAME/recyclarr.yml
+  - $DOCKERDIR/compose/$HOSTNAME/sabnzbd.yml
+  - $DOCKERDIR/compose/$HOSTNAME/sonarr.yml
+  - $DOCKERDIR/compose/$HOSTNAME/speedtest.yml
+  - $DOCKERDIR/compose/$HOSTNAME/tautulli.yml
 secrets:
   mysql_root_password:
     file: $DOCKERDIR/secrets/mysql_root_password
