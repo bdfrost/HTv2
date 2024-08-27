@@ -1,5 +1,5 @@
 services:
-  NAME:
+  uptime-kuma:
     image: louislam/uptime-kuma
     container_name: uptime-kuma
     security_opt:
