@@ -15,6 +15,7 @@ services:
       OOKLA_EULA_GDPR: true
       DB_CONNECTION: sqlite
       PUBLIC_DASHBOARD: true
+      APP_KEY: $SPEEDTEST_KEY
     volumes:
       - $DOCKERDIR/appdata/speedtest:/config
     labels:
