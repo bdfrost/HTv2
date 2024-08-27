@@ -22,6 +22,7 @@ include:
   - $DOCKERDIR/compose/$HOSTNAME/sonarr.yml
   - $DOCKERDIR/compose/$HOSTNAME/speedtest.yml
   - $DOCKERDIR/compose/$HOSTNAME/tautulli.yml
+  - $DOCKERDIR/compose/$HOSTNAME/uptimekuma.yml
 secrets:
   mysql_root_password:
     file: $DOCKERDIR/secrets/mysql_root_password
