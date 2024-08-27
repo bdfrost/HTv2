@@ -1,7 +1,7 @@
 services:
-  uptime-kuma:
+  uptimekuma:
     image: louislam/uptime-kuma
-    container_name: uptime-kuma
+    container_name: uptimekuma
     security_opt:
       - no-new-privileges:true
     restart: unless-stopped
@@ -17,14 +17,14 @@ services:
       PUID: $PUID
       PGID: $PGID
     volumes:
-      - $DOCKERDIR/appdata/uptime-kuma:/app/data
+      - $DOCKERDIR/appdata/uptimekuma:/app/data
     labels:
       - "traefik.enable=true"
       ## HTTP Routers
-      - "traefik.http.routers.uptime-kuma-rtr.entrypoints=websecure"
-      - "traefik.http.routers.uptime-kuma-rtr.rule=Host(`uptime-kuma.$DOMAINNAME`)"
+      - "traefik.http.routers.uptimekuma-rtr.entrypoints=websecure"
+      - "traefik.http.routers.uptimekuma-rtr.rule=Host(`uptimekuma.$DOMAINNAME`)"
       ## Middlewares
-      - "traefik.http.routers.uptime-kuma-rtr.middlewares=chain-no-auth@file"
+      - "traefik.http.routers.uptimekuma-rtr.middlewares=chain-no-auth@file"
       ## HTTP Services
-      - "traefik.http.routers.uptime-kuma-rtr.service=uptime-kuma-svc"
-      - "traefik.http.services.uptime-kuma-svc.loadbalancer.server.port=3001"
+      - "traefik.http.routers.uptimekuma-rtr.service=uptimekuma-svc"
+      - "traefik.http.services.uptimekuma-svc.loadbalancer.server.port=3001"
