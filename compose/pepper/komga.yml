@@ -1,0 +1,32 @@
+services:
+  komga:
+    image: gotson/komga
+    container_name: komga
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    profiles: ["apps", "all"]
+    networks:
+      - t2_proxy
+      # - default
+      # - socket_proxy
+    environment:
+      TZ: $TZ
+    labels:
+      - "traefik.enable=true"
+      ## HTTP Routers
+      - "traefik.http.routers.komga-rtr.entrypoints=websecure"
+      - "traefik.http.routers.komga-rtr.rule=Host(`komga.$DOMAINNAME`)"
+      ## Middlewares
+      - "traefik.http.routers.komga-rtr.middlewares=chain-no-auth@file"
+      ## HTTP Services
+      - "traefik.http.routers.komga-rtr.service=komga-svc"
+      - "traefik.http.services.komga-svc.loadbalancer.server.port=25600"
+    volumes:
+      - type: bind
+        source: $DOCKERDIR/appdata/komga
+        target: /config
+      - type: bind
+        source: /mnt/media/books
+        target: /data
+    user: "$PUID:$PGID"

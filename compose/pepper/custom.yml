@@ -7,6 +7,7 @@ include:
   - $DOCKERDIR/compose/$HOSTNAME/dozzle.yml
   - $DOCKERDIR/compose/$HOSTNAME/duplicati.yml
   - $DOCKERDIR/compose/$HOSTNAME/kometa.yml
+  - $DOCKERDIR/compose/$HOSTNAME/komga.yml
   - $DOCKERDIR/compose/$HOSTNAME/kopia.yml
   - $DOCKERDIR/compose/$HOSTNAME/maintainerr.yml
   - $DOCKERDIR/compose/$HOSTNAME/monitorr.yml
