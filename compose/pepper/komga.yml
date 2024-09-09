@@ -23,8 +23,6 @@ services:
       - "traefik.http.routers.komga-rtr.service=komga-svc"
       - "traefik.http.services.komga-svc.loadbalancer.server.port=25600"
     volumes:
-      - source: $DOCKERDIR/appdata/komga
-        target: /config
-      - source: /mnt/media/books
-        target: /data
+      - $DOCKERDIR/appdata/komga:/config
+      - /mnt/media/books:/data
     user: "$PUID:$PGID"
