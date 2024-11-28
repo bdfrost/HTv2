@@ -13,3 +13,9 @@ services:
       - "traefik.http.routers.kitana-rtr.middlewares=chain-authelia@file"
       - "traefik.http.routers.kitana-rtr.service=kitana-svc"
       - "traefik.http.services.kitana-svc.loadbalancer.server.port=31337"
+    networks:
+      - t2_proxy
+    environment:
+      TZ: $TZ
+      PUID: $PUID
+      PGID: $PGID
