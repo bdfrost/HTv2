@@ -1,0 +1,17 @@
+services:
+  kitana:
+    image: pannal/kitana:latest
+    container_name: kitana
+    volumes:
+      - - $DOCKERDIR/appdata/kitana:/app/data
+    links:
+     - plex
+    command: -B 0.0.0.0:31337 -P
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.kitana-rtr.entrypoints=websecure"
+      - "traefik.http.routers.kitana-rtr.rule=Host(`kitana.$DOMAINNAME`)"
+      - "traefik.http.routers.kitana-rtr.middlewares=chain-authelia@file"
+      - "traefik.http.routers.kitana-rtr.service=kitana-svc"
+      - "traefik.http.services.kitana-svc.loadbalancer.server.port=31337"
