@@ -6,7 +6,7 @@ services:
       - $DOCKERDIR/appdata/kitana:/app/data
     links:
      - plex
-    command: -B 0.0.0.0:31337 -P
+    command: -B 0.0.0.0:31337 -P True
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
