@@ -4,7 +4,7 @@ services:
     container_name: kitana
     volumes:
       - $DOCKERDIR/appdata/kitana:/app/data
-    command: -B 0.0.0.0:31337 -P True
+    command: -B 0.0.0.0:31337 -P
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
