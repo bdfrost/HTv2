@@ -3,7 +3,7 @@
 # services:
 include:
   - $DOCKERDIR/compose/$HOSTNAME/bazarr.yml
-  - $DOCKERDIR/compose/$HOSTNAME/cloudflared.yaml
+  - $DOCKERDIR/compose/$HOSTNAME/cloudflared.yml
   - $DOCKERDIR/compose/$HOSTNAME/diun.yml
   - $DOCKERDIR/compose/$HOSTNAME/dozzle.yml
   - $DOCKERDIR/compose/$HOSTNAME/duplicati.yml
