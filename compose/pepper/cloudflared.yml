@@ -1,0 +1,30 @@
+services:
+  cloudflared:
+    image: cloudflare/cloudflared
+    container_name: cloudflared
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    command: tunnel run
+    profiles: ["apps", "all"]
+    networks:
+      - t2_proxy
+    environment:
+      TZ: $TZ
+      PUID: $PUID
+      PGID: $PGID
+      TUNNEL_TOKEN: /run/secrets/cf_cloudflared   
+    volumes:
+      - $DOCKERDIR/appdata/NAME:/app/data
+    labels:
+      - "traefik.enable=true"
+      ## HTTP Routers
+      - "traefik.http.routers.NAME-rtr.entrypoints=websecure"
+      - "traefik.http.routers.NAME-rtr.rule=Host(`NAME.$DOMAINNAME`)"
+      ## Middlewares
+      - "traefik.http.routers.NAME-rtr.middlewares=chain-no-auth@file"
+      ## HTTP Services
+      - "traefik.http.routers.NAME-rtr.service=NAME-svc"
+      - "traefik.http.services.NAME-svc.loadbalancer.server.port=BACKENDPORT"
+    secrets:
+      - cf_cloudflared
