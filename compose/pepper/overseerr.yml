@@ -19,6 +19,7 @@ services:
       - $DOCKERDIR/appdata/healthcheck:/config/crontabs
     labels:
       - "traefik.enable=true"
+      - "traefik.http.routers.overseerr-rtr.tls=true"
       - "traefik.http.routers.overseerr-rtr.entrypoints=websecure"
       - "traefik.http.routers.overseerr-rtr.rule=Host(`overseerr.$DOMAINNAME`)"
       - "traefik.http.routers.overseerr-rtr.middlewares=chain-authelia@file"
