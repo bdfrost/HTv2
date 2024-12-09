@@ -39,3 +39,5 @@ secrets:
     file: $DOCKERDIR/secrets/kopia_password
   kopia_repo_password:
     file: $DOCKERDIR/secrets/kopia_repo_password
+  cf_cloudflared:
+    file: $DOCKERDIR/secrets/cf_cloudflared
