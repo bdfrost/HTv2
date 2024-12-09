@@ -28,4 +28,4 @@ services:
       - DOMAIN1_ZONE_ID=$CF_ZONE_ID
       - DOMAIN1_PROXIED=TRUE
     secrets:
-      - cf_tokencf_dns_api_token
+      - cf_dns_api_token
