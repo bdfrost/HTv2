@@ -2,8 +2,10 @@ services:
   cloudflare-companion:
     container_name: cloudflare-companion
     image: ghcr.io/tiredofit/docker-traefik-cloudflare-companion:latest
-    # volumes:
-    #   - /var/run/docker.sock:/var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - socket_proxy
     security_opt:
       - no-new-privileges:true
     restart: unless-stopped
