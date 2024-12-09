@@ -13,8 +13,6 @@ services:
       TZ: $TZ
       PUID: $PUID
       PGID: $PGID
-      TUNNEL_TOKEN: /run/secrets/cf_cloudflared   
+      TUNNEL_TOKEN: $CF_CLOUDFLARED   
     volumes:
       - $DOCKERDIR/appdata/NAME:/app/data
-    secrets:
-      - cf_cloudflared

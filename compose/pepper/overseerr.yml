@@ -13,11 +13,11 @@ services:
       PUID: $PUID
       PGID: $PGID
       DOCKER_MODS: linuxserver/mods:universal-cron
-      CF_ZONE_ID: $CF_ZONE_ID
-      CF_ACCOUNT_ID: $CF_ACCOUNT_ID
-      CF_API_TOKEN: $CF_API_TOKEN
-      CF_TUNNEL_NAME: $CF_TUNNEL_NAME
-      CF_TUNNEL_PASSWORD: $CF_TUNNEL_PASSWORD
+      # CF_ZONE_ID: $CF_ZONE_ID
+      # CF_ACCOUNT_ID: $CF_ACCOUNT_ID
+      # CF_API_TOKEN: $CF_API_TOKEN
+      # CF_TUNNEL_NAME: $CF_TUNNEL_NAME
+      # CF_TUNNEL_PASSWORD: $CF_TUNNEL_PASSWORD
     volumes:
       - $DOCKERDIR/appdata/overseerr:/config
       - $DOCKERDIR/appdata/healthcheck:/config/crontabs
