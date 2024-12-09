@@ -34,6 +34,7 @@ services:
       - /mnt/media/kopia:/repository
     labels:
       - "traefik.enable=true"
+      - "traefik.http.routers.koipa-rtr.tls=true"
       - "traefik.http.routers.kopia-rtr.entrypoints=websecure"
       - "traefik.http.routers.kopia-rtr.rule=Host(`kopia.$DOMAINNAME`)"
       - "traefik.http.routers.kopia-rtr.middlewares=chain-no-auth@file"

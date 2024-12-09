@@ -20,6 +20,7 @@ services:
       - $DOCKERDIR/appdata/speedtest:/config
     labels:
       - "traefik.enable=true"
+      - "traefik.http.routers.speedtest-rtr.tls=true"
       ## HTTP Routers
       - "traefik.http.routers.speedtest-rtr.entrypoints=websecure"
       - "traefik.http.routers.speedtest-rtr.rule=Host(`speedtest.$DOMAINNAME`)"

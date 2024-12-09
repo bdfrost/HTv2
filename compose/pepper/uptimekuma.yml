@@ -20,6 +20,7 @@ services:
       - $DOCKERDIR/appdata/uptimekuma:/app/data
     labels:
       - "traefik.enable=true"
+      - "traefik.http.routers.uptimekuma-rtr.tls=true"
       ## HTTP Routers
       - "traefik.http.routers.uptimekuma-rtr.entrypoints=websecure"
       - "traefik.http.routers.uptimekuma-rtr.rule=Host(`uptimekuma.$DOMAINNAME`)"

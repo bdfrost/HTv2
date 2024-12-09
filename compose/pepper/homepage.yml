@@ -18,6 +18,7 @@ services:
       PGID: $PGID
     labels:
       - "traefik.enable=true"
+      - "traefik.http.routers.homepage-rtr.tls=true"
       ## HTTP Routers
       - "traefik.http.routers.homepage-rtr.entrypoints=websecure"
       - "traefik.http.routers.homepage-rtr.rule=Host(`$DOMAINNAME`,`www.$DOMAINNAME`)" # Both domain.com and www.domain.com

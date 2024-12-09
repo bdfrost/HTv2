@@ -14,6 +14,7 @@ services:
       TZ: $TZ
     labels:
       - "traefik.enable=true"
+      - "traefik.http.routers.komga-rtr.tls=true"
       ## HTTP Routers
       - "traefik.http.routers.komga-rtr.entrypoints=websecure"
       - "traefik.http.routers.komga-rtr.rule=Host(`komga.$DOMAINNAME`)"

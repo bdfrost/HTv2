@@ -19,6 +19,7 @@ services:
       - $DOCKERDIR/appdata/organizr:/config
     labels:
       - "traefik.enable=true"
+      - "traefik.http.routers.organizr-rtr.tls=true"
       - "traefik.http.routers.organizr-rtr.entrypoints=websecure"
       - "traefik.http.routers.organizr-rtr.rule=Host(`$DOMAINNAME`,`www.$DOMAINNAME`,`organizr.$DOMAINNAME`)"
       # - "traefik.http.routers.organizr-rtr.middlewares=chain-no-auth@file"

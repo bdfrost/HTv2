@@ -20,6 +20,7 @@ services:
       - $DOCKERDIR/appdata/bazarr/config:/config
     labels:
       - "traefik.enable=true"
+      - "traefik.http.routers.bazarr-rtr.tls=true"
       - "traefik.http.routers.bazarr-rtr.entrypoints=websecure"
       - "traefik.http.routers.bazarr-rtr.rule=Host(`bazarr.$DOMAINNAME`)"
       # - "traefik.http.routers.bazarr-rtr.middlewares=chain-basic-auth@file"

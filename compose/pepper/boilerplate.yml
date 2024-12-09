@@ -20,6 +20,7 @@ services:
       - $DOCKERDIR/appdata/NAME:/app/data
     labels:
       - "traefik.enable=true"
+      - "traefik.http.routers.NAME-rtr.tls=true"
       ## HTTP Routers
       - "traefik.http.routers.NAME-rtr.entrypoints=websecure"
       - "traefik.http.routers.NAME-rtr.rule=Host(`NAME.$DOMAINNAME`)"

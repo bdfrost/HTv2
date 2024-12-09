@@ -20,6 +20,7 @@ services:
       - $DOCKERDIR/appdata/maintainerr:/opt/data
     labels:
       - "traefik.enable=true"
+      - "traefik.http.routers.maintainerr-rtr.tls=true"
       ## HTTP Routers
       - "traefik.http.routers.maintainerr-rtr.entrypoints=websecure"
       - "traefik.http.routers.maintainerr-rtr.rule=Host(`maintainerr.$DOMAINNAME`)"

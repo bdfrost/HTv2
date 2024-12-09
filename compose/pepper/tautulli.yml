@@ -19,6 +19,7 @@ services:
       - $DOCKERDIR/appdata/healthcheck:/config/crontabs
     labels:
       - "traefik.enable=true"
+      - "traefik.http.routers.tautulli-rtr.tls=true"
       - "traefik.http.routers.tautulli-rtr.entrypoints=websecure"
       - "traefik.http.routers.tautulli-rtr.rule=Host(`tautulli.$DOMAINNAME`)"
       # - "traefik.http.routers.tautulli-rtr.middlewares=chain-no-auth@file"

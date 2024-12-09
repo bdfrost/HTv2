@@ -84,6 +84,7 @@ services:
       - cfips
     labels:
       - "traefik.enable=true"
+      - "traefik.http.routers.traefik-rtr.tls=true"
       # HTTP Routers
       - "traefik.http.routers.traefik-rtr.entrypoints=websecure"
       - "traefik.http.routers.traefik-rtr.rule=Host(`traefik.$DOMAINNAME_1`)"

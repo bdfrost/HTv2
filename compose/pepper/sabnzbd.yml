@@ -22,6 +22,7 @@ services:
       - $DOCKERDIR/appdata/healthcheck:/config/crontabs
     labels:
       - "traefik.enable=true"
+      - "traefik.http.routers.sabnzbd-rtr.tls=true"
       ## HTTP Routers
       - "traefik.http.routers.sabnzbd-rtr.entrypoints=websecure"
       - "traefik.http.routers.sabnzbd-rtr.rule=Host(`sabnzbd.$DOMAINNAME`)"
