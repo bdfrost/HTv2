@@ -42,3 +42,5 @@ secrets:
     file: $DOCKERDIR/secrets/kopia_repo_password
   CF_TOKEN:
     file: $DOCKERDIR/secrets/cf_dns_api_token
+  cfips:
+    file: $DOCKERDIR/secrets/cfips.txt

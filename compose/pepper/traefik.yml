@@ -74,6 +74,7 @@ services:
       - $DOCKERDIR/appdata/traefik2/acme/acme.json:/acme.json 
       - $DOCKERDIR/logs/$HOSTNAME/traefik:/logs
     environment:
+      - CLOUDFLARE_IPS=/run/secrets/cfips
       - TZ=$TZ
       - CF_DNS_API_TOKEN_FILE=/run/secrets/cf_dns_api_token    
       - HTPASSWD_FILE=/run/secrets/basic_auth_credentials # HTTP Basic Auth Credentials
@@ -81,6 +82,7 @@ services:
     secrets:
       - cf_dns_api_token
       - basic_auth_credentials
+      - cfips
     labels:
       - "traefik.enable=true"
       # HTTP Routers
