@@ -1,0 +1,31 @@
+services:
+  cloudflare-companion:
+    container_name: cloudflare-companion
+    image: ghcr.io/tiredofit/docker-traefik-cloudflare-companion:latest
+    # volumes:
+    #   - /var/run/docker.sock:/var/run/docker.sock
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    profiles: ["apps", "all"]
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+    environment:
+      - TIMEZONE=$TZ
+      - LOG_TYPE=CONSOLE
+      - LOG_LEVEL=INFO
+      - TRAEFIK_VERSION=2
+      - RC_TYPE=CNAME
+      - TARGET_DOMAIN=$DOMAINNAME
+      - REFRESH_ENTRIES=TRUE
+      - ENABLE_TRAEFIK_POLL=TRUE
+      - TRAEFIK_POLL_URL=https://traefik.$DOMAINNAME/api
+      - TRAEFIK_FILTER_LABEL=traefik.constraint
+      - TRAEFIK_FILTER=proxy-public
+      - DOMAIN1=$DOMAINNAME
+      - DOMAIN1_ZONE_ID=$CF_ZONE_ID
+      - DOMAIN1_PROXIED=TRUE
+    secrets:
+      - cf_tokencf_dns_api_token
