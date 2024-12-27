@@ -16,10 +16,10 @@ networks:
 ########################### SERVICES
 include:
   # - SERVICE-PLACEHOLDER-DO-NOT-DELETE
-  - /home/bfrost/docker/compose/$HOSTNAME/custom.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/portainer.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/socket-proxy.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/mariadb.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/authelia.yml
-  - /home/bfrost/docker/compose/$HOSTNAME/traefik.yml
+  - /home/bfrost/docker/compose/pepper/custom.yml
+  - /home/bfrost/docker/compose/pepper/portainer.yml
+  - /home/bfrost/docker/compose/pepper/socket-proxy.yml
+  - /home/bfrost/docker/compose/pepper/mariadb.yml
+  - /home/bfrost/docker/compose/pepper/authelia.yml
+  - /home/bfrost/docker/compose/pepper/traefik.yml
   # SERVICE-PLACEHOLDER-DO-NOT-DELETE
