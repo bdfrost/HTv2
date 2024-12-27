@@ -4,6 +4,7 @@ services:
     container_name: kitana
     volumes:
       - $DOCKERDIR/appdata/kitana:/app/data
+    profiles: ["apps", "all"]
     command: -P
     restart: unless-stopped
     labels:

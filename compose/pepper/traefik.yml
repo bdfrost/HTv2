@@ -81,7 +81,7 @@ services:
     secrets:
       - cf_dns_api_token
       - basic_auth_credentials
-      - cfips
+      # - cfips
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.traefik-rtr.tls=true"
