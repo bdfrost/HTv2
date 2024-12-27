@@ -1,2 +1,2 @@
-alias dclogs='docker compose --profile all -f /mnt/appdata/docker-compose-pepper.yml logs -tf --tail="50” '
-alias dcrun='docker compose --profile all -f /mnt/appdata/docker-compose-pepper.yml '
+alias dclogs='docker compose --profile all -f /home/bfrost/docker/docker-compose-pepper.yml logs -tf --tail="50” '
+alias dcrun='docker compose -f /home/bfrost/docker/docker-compose-pepper.yml '
