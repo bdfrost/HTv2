@@ -9,7 +9,7 @@ services:
     networks:
       - t2_proxy
       # - default
-      # - socket_proxy
+      - socket_proxy
     # ports:
     #  - "3001:3001" 
     environment:
