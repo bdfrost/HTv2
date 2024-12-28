@@ -18,6 +18,7 @@ services:
       PGID: $PGID
     volumes:
       - $DOCKERDIR/appdata/uptimekuma:/app/data
+      - "/var/run/docker.sock:/var/run/docker.sock"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.uptimekuma-rtr.tls=true"
