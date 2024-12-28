@@ -8,17 +8,13 @@ services:
     profiles: ["apps", "all"]
     networks:
       - t2_proxy
-      # - default
       - socket_proxy
-    # ports:
-    #  - "3001:3001" 
     environment:
       TZ: $TZ
       PUID: $PUID
       PGID: $PGID
     volumes:
       - $DOCKERDIR/appdata/uptimekuma:/app/data
-      - "/var/run/docker.sock:/var/run/docker.sock"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.uptimekuma-rtr.tls=true"
