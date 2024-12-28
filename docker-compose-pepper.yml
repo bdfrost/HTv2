@@ -19,7 +19,7 @@ include:
   - /home/bfrost/docker/compose/pepper/custom.yml
   - /home/bfrost/docker/compose/pepper/portainer.yml
   - /home/bfrost/docker/compose/pepper/socket-proxy.yml
-  - /home/bfrost/docker/compose/pepper/mariadb.yml
+  # - /home/bfrost/docker/compose/pepper/mariadb.yml
   - /home/bfrost/docker/compose/pepper/authelia.yml
   - /home/bfrost/docker/compose/pepper/traefik.yml
   # SERVICE-PLACEHOLDER-DO-NOT-DELETE
