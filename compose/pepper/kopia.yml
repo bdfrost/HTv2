@@ -2,7 +2,7 @@ services:
   kopia:
     image: kopia/kopia:latest
     container_name: kopia
-    hostname: Hostname
+    hostname: kopia
     security_opt:
       - no-new-privileges:true
     restart: unless-stopped

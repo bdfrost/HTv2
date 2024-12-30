@@ -9,6 +9,7 @@ include:
   - $DOCKERDIR/compose/pepper/kitana.yml
   - $DOCKERDIR/compose/pepper/kometa.yml
   - $DOCKERDIR/compose/pepper/komga.yml
+  - $DOCKERDIR/compose/pepper/kopia.yml
   - $DOCKERDIR/compose/pepper/maintainerr.yml
   - $DOCKERDIR/compose/pepper/monitorr.yml
   - $DOCKERDIR/compose/pepper/netdata.yml
