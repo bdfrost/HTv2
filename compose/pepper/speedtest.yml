@@ -16,6 +16,7 @@ services:
       DB_CONNECTION: sqlite
       PUBLIC_DASHBOARD: true
       APP_KEY: $SPEEDTEST_KEY
+      SPEEDTEST_SCHEDULE: 0 * * * *
     volumes:
       - $DOCKERDIR/appdata/speedtest:/config
     labels:
