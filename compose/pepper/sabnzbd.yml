@@ -17,6 +17,7 @@ services:
       HAS_IPV6: false
     volumes:
       - /mnt/media/:/data/
+      - /mnt/downloads/:/downloads/
       - $DOCKERDIR/appdata/sabnzbd/config/scripts:/app/sabnzbd/scripts
       - $DOCKERDIR/appdata/sabnzbd/config:/config
       - $DOCKERDIR/appdata/healthcheck:/config/crontabs
