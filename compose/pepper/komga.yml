@@ -26,7 +26,7 @@ services:
     volumes:
       - $DOCKERDIR/appdata/komga:/config
       - /mnt/media/books:/data
-      - /mnt/media/book-downloads:/import-books
-      - /mnt/media/comic-downloads:/import-comics
-      - /mnt/media/book-downloads:/misc-downloads
+      - /mnt/downloads/book-downloads:/import-books
+      - /mnt/downloads/comic-downloads:/import-comics
+      - /mnt/downloads/book-downloads:/misc-downloads
     user: "$PUID:$PGID"
