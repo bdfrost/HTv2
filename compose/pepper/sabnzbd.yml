@@ -1,6 +1,6 @@
 services:
   sabnzbd:
-    image: lscr.io/linuxserver
+    image: lscr.io/linuxserver/sabnzbd
     container_name: sabnzbd
     security_opt:
       - no-new-privileges:true
