@@ -12,7 +12,7 @@ services:
       TZ: $TZ
       PUID: $PUID
       PGID: $PGID
-      DOCKER_MODS: linuxserver/mods:universal-cron
+      # DOCKER_MODS: linuxserver/mods:universal-cron
     volumes:
       - $DOCKERDIR/appdata/tautulli:/config
       - "$DOCKERDIR/appdata/plex/Library/Application\\ Support/Plex\\ Media\\ Server/Logs:/logs:ro"

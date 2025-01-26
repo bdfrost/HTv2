@@ -12,7 +12,7 @@ services:
       TZ: $TZ
       PUID: $PUID
       PGID: $PGID
-      DOCKER_MODS: linuxserver/mods:universal-cron
+      # DOCKER_MODS: linuxserver/mods:universal-cron
     volumes:
       - $DOCKERDIR/appdata/prowlarr:/config
       # - $DOCKERDIR/appdata/healthcheck:/config/crontabs

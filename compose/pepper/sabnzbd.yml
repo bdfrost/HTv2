@@ -12,7 +12,7 @@ services:
       TZ: $TZ
       PUID: $PUID
       PGID: $PGID
-      DOCKER_MODS: linuxserver/mods:universal-cron
+      # DOCKER_MODS: linuxserver/mods:universal-cron
       HAS_IPV6: false
     volumes:
       - /mnt/media/:/data/
