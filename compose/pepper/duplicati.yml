@@ -16,7 +16,7 @@ services:
       - $DOCKERDIR/appdata/duplicati:/config
       - /mnt:/source
       - $DOCKERDIR/appdata/:/source/appdata
-      - $DOCKERDIR/appdata/healthcheck:/config/crontabs
+      # - $DOCKsERDIR/appdata/healthcheck:/config/crontabs
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.duplicati-rtr.tls=true"

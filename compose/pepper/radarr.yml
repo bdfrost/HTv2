@@ -15,7 +15,7 @@ services:
     volumes:
       - $DOCKERDIR/appdata/radarr:/config
       - /mnt/media:/data
-      - $DOCKERDIR/appdata/healthcheck:/config/crontabs
+      # - $DOCKERDIR/appdata/healthcheck:/config/crontabs
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.radarr-rtr.tls=true"

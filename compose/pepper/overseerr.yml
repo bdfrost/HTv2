@@ -16,7 +16,7 @@ services:
       traefik.constraint: proxy-public
     volumes:
       - $DOCKERDIR/appdata/overseerr:/config
-      - $DOCKERDIR/appdata/healthcheck:/config/crontabs
+      # - $DOCKERDIR/appdata/healthcheck:/config/crontabs
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.overseerr-rtr.tls=true"

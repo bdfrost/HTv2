@@ -15,7 +15,7 @@ services:
       PATH: $PATH:/app/sonarr/bin/
     volumes:
       - $DOCKERDIR/appdata/sonarr:/config
-      - $DOCKERDIR/appdata/healthcheck:/config/crontabs
+      # - $DOCKERDIR/appdata/healthcheck:/config/crontabs
       - /mnt/media:/data
     labels:
       - "traefik.enable=true"

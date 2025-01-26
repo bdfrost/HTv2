@@ -18,7 +18,7 @@ services:
       - /mnt/media/:/data/
       - $DOCKERDIR/appdata/sabnzbd/config/scripts:/app/sabnzbd/scripts
       - $DOCKERDIR/appdata/sabnzbd/config:/config
-      - $DOCKERDIR/appdata/healthcheck:/config/crontabs
+      # - $DOCKERDIR/appdata/healthcheck:/config/crontabs
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.sabnzbd-rtr.tls=true"

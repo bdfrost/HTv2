@@ -15,7 +15,7 @@ services:
       DOCKER_MODS: linuxserver/mods:universal-cron
     volumes:
       - $DOCKERDIR/appdata/prowlarr:/config
-      - $DOCKERDIR/appdata/healthcheck:/config/crontabs
+      # - $DOCKERDIR/appdata/healthcheck:/config/crontabs
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.prowlarr-rtr.tls=true"
